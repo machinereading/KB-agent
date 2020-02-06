@@ -170,7 +170,7 @@ class kb_agent:
 
 		if dialogAct == 'Knowledge_inform':
 			for triple in triple_list:
-				if str(type(triple)) == "<class 'str'>",
+				if str(type(triple)) == "<class 'str'>":
 					s, p, o = triple.split('\t')
 				else:
 					s, p, o = triple
