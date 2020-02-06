@@ -229,17 +229,14 @@ class kb_agent:
 			userdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'], self.user_name)
 			masterdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'])
 			
-			print(masterdb_query)
-			print(userdb_query)
-			
 			masterdb_result = db_linker.QueryToMasterKB(masterdb_query)
 			userdb_result = db_linker.QueryToUserKB(userdb_query)
 			
-			print(masterdb_result)
-			print(userdb_result)
-			if masterdb_result == 'false' and userdb_result == 'false':
+			if masterdb_result['boolean'] == False and userdb_result['boolean'] == False:
 				question_list.append([entities[0]['text'],candidate_property],'?o')
 				question_num += 1
+				
+		return question_list
 
 	def triple_question_generation(self, triple):
 		s, p, o = triple
