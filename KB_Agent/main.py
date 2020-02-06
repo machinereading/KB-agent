@@ -236,7 +236,7 @@ class kb_agent:
 			userdb_result = db_linker.QueryToUserKB(userdb_query)
 			
 			if masterdb_result['boolean'] == False and userdb_result['boolean'] == False:
-				question_list.append([entities[0]['text'],candidate_property,'?o'])
+				question_list.append([entities[0]['uri'],candidate_property,'?o'])
 				question_num += 1
 
 		return question_list
@@ -280,7 +280,7 @@ class kb_agent:
 				answer += self.nlg_with_triple([[self.question_triple[0],self.question_triple[1],entity]],'Knowledge_inform')
 			else:
 				answer = '무슨말씀이신지 잘 모르겠어요. 넘어갈게요!'
-				
+
 			if len(self.entity_question_triple_list) > 0:
 				self.question_triple = self.entity_question_triple_list.pop(0)
 				answer = answer + self.triple_question_generation(self.question_triple)
