@@ -170,7 +170,10 @@ class kb_agent:
 
 		if dialogAct == 'Knowledge_inform':
 			for triple in triple_list:
-				s, p, o = triple.split('\t')
+				if str(type(triple)) == "<class 'str'>",
+					s, p, o = triple.split('\t')
+				else:
+					s, p, o = triple
 				s = s.split('/')[-1].rstrip('>')
 				p = p.split('/')[-1].rstrip('>')
 				if 'http://kbox' in o:
