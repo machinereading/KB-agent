@@ -272,12 +272,12 @@ class kb_agent:
 			entities = sentence_parser.Entity_Linking(sentence)
 			answer = ''
 			if len(entities) >0:
-				entity = entities[-1]['url']
+				entity = entities[-1]['uri']
 				self.save_knowledge([[self.question_triple[0],self.question_triple[1],entity]], utterance_id)
 				answer += self.nlg_with_triple([[self.question_triple[0],self.question_triple[1],entity]],'Knowledge_inform')
 
 				if len(self.entity_question_triple_list) > 0:
-					self.question_triple = self.entity_question_triple_list.pop()
+					self.question_triple = self.entity_question_triple_list.pop(0)
 					answer = answer + triple_question_generation(self.question_triple)
 				else:
 					self.pre_system_dialog_act = None
@@ -322,7 +322,7 @@ class kb_agent:
 				## 질문 목록에 대해 질문 시작
 				if len(self.entity_question_triple_list) > 0:
 					answer = answer + entities[0]['text']+'에 대해서 물어보고 싶은게 있어요.\n'
-					self.question_triple = self.entity_question_triple_list.pop()
+					self.question_triple = self.entity_question_triple_list.pop(0)
 					answer = answer + self.triple_question_generation(self.question_triple)
 					self.pre_system_dialog_act = 'entity_question'
 
