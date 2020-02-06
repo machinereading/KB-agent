@@ -91,10 +91,20 @@ def AddNewUser(user_name):
 	except Exception as e:
 		print(e)
 
+	sql = "SELECT user_id FROM USER WHERE user_name = {}".format(user_name.strip())
+	try:
+		curs.execute(sql)
+		result = curs.fetchall()
+	
+	except Exception as e:
+		print(e)
+
 	curs.close()	
 	conn.commit()
 	conn.close()
 	AddNewUserInKB(user_name)
+
+	return result
 
 def QueryToDatabase(query):
 	conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword, db=dialogDBDatabase,
@@ -171,9 +181,9 @@ def InsertDataToTable(table_name,data_list):
 
 		for item in data.items():
 			keys = keys + ',' + item[0]
-			print(type(1))
 			if str(type(item[1])) == "<class 'str'>":
-				values = values + ",'" + item[1] +"'"
+				text = item[1].replace("'","''")
+				values = values + ",'" + text +"'"
 			elif str(type(item[1])) == "<class 'int'>":
 				values = values + "," + str(item[1])
 			else:
@@ -183,16 +193,23 @@ def InsertDataToTable(table_name,data_list):
 		values = values[1:]
 		sql = "INSERT INTO {}({}) VALUES({})".format(table_name,keys,values)
 
-		print(sql)
 		try:
 			curs.execute(sql)
 		
 		except Exception as e:
 			print(e)
 
+		sql = "SELECT LAST_INSERT_ID()"
+		try:
+			curs.execute(sql)
+			result = curs.fetchall()
+			
+		except Exception as e:
+			print(e)
 	curs.close()	
 	conn.commit()
 	conn.close()
+	return result[0][0]
 
 def UserDBaccess(userDB_json):
 	userID = userDB_json['userID']
