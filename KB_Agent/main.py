@@ -10,11 +10,15 @@ from modules import entity_summarization
 frame_info_path = './data/frame_info_full.json'
 prior_property_path = './data/prior_property.json'
 
-class_dict = {'level_1': ['Disease', 'Event', 'Food', 'Place', 'Species', 'Work'],
-				'level_2': ['Sport', 'Organisation', 'Person', 'PopulatedPlace', 'Film', 'MusicalWork'],
-				'level_3': ['FictionalCharacter', 'Company', 'SportsTeam', 'Artist', 'Athlete', 'Scientist', 'Writer',
-							  'SportsEvent', 'Settlement'],
-				'level_4': ['College', 'University', 'School', 'MusicalArtist', 'Station']}
+# class_dict = {'level_1': ['Disease', 'Event', 'Food', 'Place', 'Species', 'Work'],
+# 				'level_2': ['Sport', 'Organisation', 'Person', 'PopulatedPlace', 'Film', 'MusicalWork'],
+# 				'level_3': ['FictionalCharacter', 'Company', 'SportsTeam', 'Artist', 'Athlete', 'Scientist', 'Writer',
+# 							  'SportsEvent', 'Settlement'],
+# 				'level_4': ['College', 'University', 'School', 'MusicalArtist', 'Station']}
+class_dict = {'level_1': ['Agent', 'Place'],
+				'level_2': ['Person', 'Organisation', 'PopulatedPlace'],
+				'level_3': ['EducationalInstitution', 'Settlement', 'Artist'],
+				'level_4': ['College', 'University', 'Actor', 'City', 'Town']}
 
 class kb_agent:
 
@@ -175,8 +179,9 @@ class kb_agent:
 		return answer
 	def get_entity_type(self, entities):
 		entity_list = []
+		
 		for entity_type in entities[0]['type']:
-			if 'http://dbpedia.org/ontology/' in entities:
+			if 'http://dbpedia.org/ontology/' in entity_type:
 				entity_list.append(entity_type.split('/')[-1])
 
 		for entity_type in class_dict['level_4']:
@@ -196,23 +201,13 @@ class kb_agent:
 				return entity_type
 
 		return None
-	def SPARQL_generation(Qtype, triple, user_id):
+	def Knowledge_check(self, triple, user_id=None):
 		s, p, o = triple
-		if s[0] == '?':
-			target = s
-			p = '<' + p + '>'
-			o = '<' + o + '>'
-		elif p[0] == '?':
-			target = p
-			s = '<' + s + '>'
-			o = '<' + o + '>'
-		elif o[0] == '?':
-			s = '<' + s + '>'
-			p = '<' + p + '>'
-			target = o
-		result_query = Qtype
-		if Qtype == 'SELECT':
-			result_query = result_query + ' ' + target
+		s = '<' + s + '>'
+		p = '<' + p + '>'
+		target = o
+
+		result_query = 'ASK'
 		if user_id:
 			result_query = result_query + ' where { graph <http://kbox.kaist.ac.kr/username/' + user_id + '> { ' + s + ' ' + p + ' ' + o + ' } }'
 		else:
@@ -229,8 +224,13 @@ class kb_agent:
 			for candidate_property in question_property_list:
 				if question_num == 3:
 					break
-			userdb_query = SPARQL_generation('ASK', [entities[0]['uri'], candidate_property, '?o'], self.user_name)
-			masterdb_query = SPARQL_generation('ASK', [entities[0]['uri'], candidate_property, '?o'])
+				userdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'], self.user_name)
+				masterdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'])
+				print(userdb_query)
+				print(masterdb_query)
+				print(db_linker.QueryToMasterKB(masterdb_query))
+				print(db_linker.QueryToUserKB(userdb_query))
+				question_num += 1
 
 
 		return answer
@@ -242,7 +242,7 @@ class kb_agent:
 		if self.pre_system_dialog_act =='frame_question':
 			return self.react_frame_answer(sentence, utterance_id)
 		elif self.pre_system_dialog_act == 'entity_question':
-
+			self.pre_system_dialog_act = None
 			return '감사합니다.'
 		## 아무런 상태가 아닌 경우 ( 초기 상태 )
 		else:
@@ -267,8 +267,8 @@ class kb_agent:
 			## entity가 잡힌 경우
 			if len(entities)>0:
 				answer = ''
-				summarized_triples = entity_summarization.ES(entities[0]['text'])
-				answer = self.nlg_with_triple(summarized_triples, 'Knowledge_inform')
+				#summarized_triples = entity_summarization.ES(entities[0]['text'])
+				#answer = self.nlg_with_triple(summarized_triples, 'Knowledge_inform')
 
 				answer = answer + self.entity_question(entities)
 				self.pre_system_dialog_act = 'entity_question'
