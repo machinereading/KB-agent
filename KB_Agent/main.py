@@ -30,7 +30,9 @@ class kb_agent:
 	question_argument = None
 	prior_property = None
 	lu = None
+	question_triple = None
 	empty_argument_list = []
+	entity_question_triple_list = []
 
 	def __init__(self,user_name):
 		if self.user_login(user_name) == False:
@@ -215,25 +217,50 @@ class kb_agent:
 
 		return result_query
 
-	def entity_question(self, entities):
-		answer = ''
-		entity_type = self.get_entity_type(entities)
-		if entity_type is not None:			
-			question_property_list = self.prior_property[entity_type]
-			question_num = 0
-			for candidate_property in question_property_list:
-				if question_num == 3:
-					break
-				userdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'], self.user_name)
-				masterdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'])
-				print(userdb_query)
-				print(masterdb_query)
-				print(db_linker.QueryToMasterKB(masterdb_query))
-				print(db_linker.QueryToUserKB(userdb_query))
+	def get_entity_question_list(self, entities, entity_type):
+		question_property_list = self.prior_property[entity_type]
+		question_num = 0
+		question_list = []
+		for candidate_property in question_property_list:
+			if question_num == 3:
+				break
+			userdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'], self.user_name)
+			masterdb_query = self.Knowledge_check([entities[0]['uri'], candidate_property, '?o'])
+			
+			print(masterdb_query)
+			print(userdb_query)
+			
+			masterdb_result = db_linker.QueryToMasterKB(masterdb_query)
+			userdb_result = db_linker.QueryToUserKB(userdb_query)
+			
+			print(masterdb_result)
+			print(userdb_result)
+			if masterdb_result == 'false' and userdb_result == 'false':
+				question_list.append([entities[0]['text'],candidate_property],'?o')
 				question_num += 1
 
+	def triple_question_generation(self, triple):
+		s, p, o = triple
+		s = s.split('/')[-1].rstrip('>')
+		p = p.split('/')[-1].rstrip('>')
+		question = s+'의 '+p+'를 알려주세요.'
+		return question
 
-		return answer
+	def save_knowledge(self, triple, utterance_id):
+		db_linker.InsertKnowledgeToUserKB(self.user_name,triple)
+		s, p, o = triple[0]
+		s = s.split('/')[-1].rstrip('>')
+		p = p.split('/')[-1].rstrip('>')
+		o = o.split('/')[-1].rstrip('>')
+		datalist = []
+		datadict = {
+		'utterance_id' : utterance_id,
+		'subject' : s,
+		'property' : p,
+		'object' : o
+		}
+		datalist.append(datadict)
+		db_linker.InsertDataToTable('USERKB_LOG', datalist)
 
 	def dialog_policy(self,sentence, utterance_id):
 
@@ -242,8 +269,23 @@ class kb_agent:
 		if self.pre_system_dialog_act =='frame_question':
 			return self.react_frame_answer(sentence, utterance_id)
 		elif self.pre_system_dialog_act == 'entity_question':
-			self.pre_system_dialog_act = None
-			return '감사합니다.'
+
+			entities = sentence_parser.Entity_Linking(sentence)
+			answer = ''
+			if len(entities) >0:
+				entity = entities[-1]['url']
+				self.save_knowledge([[self.question_triple[0],self.question_triple[1],entity]], utterance_id)
+				answer += self.nlg_with_triple([[self.question_triple[0],self.question_triple[1],entity]],'Knowledge_inform')
+
+				if len(self.entity_question_triple_list) > 0:
+					self.question_triple = self.entity_question_triple_list.pop()
+					answer = answer + triple_question_generation(self.question_triple)
+				else:
+					self.pre_system_dialog_act = None
+					answer += '감사합니다.'
+			else:
+				answer = '무슨말씀이신지 잘 모르겠어요.'
+			return answer
 		## 아무런 상태가 아닌 경우 ( 초기 상태 )
 		else:
 			## SPARQL 쿼리로 변환 가능한 질문인 경우
@@ -267,11 +309,24 @@ class kb_agent:
 			## entity가 잡힌 경우
 			if len(entities)>0:
 				answer = ''
+				## Entity summarization을 통해 정보 제공
 				#summarized_triples = entity_summarization.ES(entities[0]['text'])
 				#answer = self.nlg_with_triple(summarized_triples, 'Knowledge_inform')
 
-				answer = answer + self.entity_question(entities)
-				self.pre_system_dialog_act = 'entity_question'
+
+				entity_type = self.get_entity_type(entities)
+
+				##entity type이 잡혀서 질문 목록 생성
+				if entity_type is not None:			
+					self.entity_question_triple_list = self.get_entity_question_list(entities,entity_type)
+
+				## 질문 목록에 대해 질문 시작
+				if len(self.entity_question_triple_list) > 0:
+					answer = answer + entities[0]['text']+'에 대해서 물어보고 싶은게 있어요.\n'
+					self.question_triple = self.entity_question_triple_list.pop()
+					answer = answer + triple_question_generation(self.question_triple)
+					self.pre_system_dialog_act = 'entity_question'
+
 				return answer
 
 		## 어디에서도 처리하지 못한 경우
