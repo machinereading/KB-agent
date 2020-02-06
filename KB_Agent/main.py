@@ -278,7 +278,7 @@ class kb_agent:
 
 				if len(self.entity_question_triple_list) > 0:
 					self.question_triple = self.entity_question_triple_list.pop(0)
-					answer = answer + triple_question_generation(self.question_triple)
+					answer = answer + self.triple_question_generation(self.question_triple)
 				else:
 					self.pre_system_dialog_act = None
 					answer += '감사합니다.'
