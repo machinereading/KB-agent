@@ -323,7 +323,7 @@ class kb_agent:
 				if len(self.entity_question_triple_list) > 0:
 					answer = answer + entities[0]['text']+'에 대해서 물어보고 싶은게 있어요.\n'
 					self.question_triple = self.entity_question_triple_list.pop()
-					answer = answer + triple_question_generation(self.question_triple)
+					answer = answer + self.triple_question_generation(self.question_triple)
 					self.pre_system_dialog_act = 'entity_question'
 
 				return answer
