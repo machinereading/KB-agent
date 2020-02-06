@@ -3,11 +3,27 @@
 import sys
 import os
 import json
+import tensorflow_hub as hub
+import tensorflow as tf
+import numpy as np
+import requests
 sys.path.append('../DB_linker/')
 import DB_Linker as db_linker
 import datetime
 from modules import sentence_parser
 from modules import entity_summarization
+
+def jsonload(fname, encoding="utf-8"):
+	with open(fname, encoding=encoding) as f:
+		j = json.load(f)
+	return j
+
+embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder/1")
+session = tf.Session()
+session.run([tf.global_variables_initializer(), tf.tables_initializer()])
+
+template_dict = jsonload('./data/template_dict.json')
+
 
 frame_info_path = './data/frame_info_full.json'
 prior_property_path = './data/prior_property.json'
@@ -21,6 +37,62 @@ class_dict = {'level_1': ['Agent', 'Place'],
 				'level_2': ['Person', 'Organisation', 'PopulatedPlace'],
 				'level_3': ['EducationalInstitution', 'Settlement', 'Artist'],
 				'level_4': ['College', 'University', 'Actor', 'City', 'Town']}
+
+def sentence_to_template(sentence):
+
+	targetURL = "http://aiopen.etri.re.kr:8000/WiseQAnal"
+	accessKey = "abfa1639-8789-43e0-b1da-c29e46b431db"
+
+	requestJson = {
+		"access_key": accessKey,
+		"argument": {
+			"text": sentence
+		}
+	}
+	replaced_word_dict = {}
+	headers = {'Content-Type': 'application/json; charset=utf-8'}
+	response = requests.post(targetURL, data=json.dumps(requestJson), headers=headers)
+	result_json = response.json()
+
+	for named_entity in result_json['return_object']['orgQInfo']['orgQUnit']['ndoc']['sentence'][0]['NE']:
+		temp = 'VAL_<' + named_entity['type'] + '>'
+		sentence = sentence.replace(named_entity['text'], temp)
+		replaced_word_dict[temp] = named_entity['text']
+		if result_json['return_object']['orgQInfo']['orgQUnit']['vLATs']:
+			temp = 'ANS_<' + result_json['return_object']['orgQInfo']['orgQUnit']['vSATs'][0]['strSAT'] + '>'
+			sentence = sentence.replace(result_json['return_object']['orgQInfo']['orgQUnit']['vLATs'][0]['strLAT'], 'ANS_<' + result_json['return_object']['orgQInfo']['orgQUnit']['vSATs'][0]['strSAT'] + '>')
+			replaced_word_dict[temp] = result_json['return_object']['orgQInfo']['orgQUnit']['vLATs'][0]['strLAT']
+
+	return sentence, replaced_word_dict
+
+def get_highest_similar_sparql(sentence_template):
+	embedding = session.run(embed([sentence_template]))
+
+	top_score = 0
+
+	for template in template_dict:
+		score = np.inner(embedding[0], np.array(template['template_use_embedding']))
+		if score > top_score:
+			sparql_query = template['template_sparql']
+			top_score = score
+
+	return top_score, sparql_query
+
+########
+def get_complete_sparql(replaced_word_dict, templated_sparql_query):
+	for template, word in replaced_word_dict.items():
+		if template.split('_')[0] == 'VAL':
+			sep = 'resource'
+		elif template.split('_')[0] == 'ANS':
+			sep = 'property'
+		else:
+			sep = 'ontology'
+		uri = '<http://ko.dbpedia.org/'+sep+'/'+word.replace(' ','_')+'>'
+		
+		templated_sparql_query = templated_sparql_query.replace(template,uri)
+
+	print(templated_sparql_query)
+	return templated_sparql_query
 
 class kb_agent:
 
@@ -106,12 +178,7 @@ class kb_agent:
 
 		return empty_argument_list
 
-	def sparql_dialog(self, sentence):
-		return 'sparql_answer'
-
-	def get_sparql_similarity(self, sentence):
-
-		return 0
+	
 
 	def frame_argument_question(self, frames):
 		question_argument = self.empty_argument_list.pop()
@@ -264,6 +331,26 @@ class kb_agent:
 		datalist.append(datadict)
 		db_linker.InsertDataToTable('USERKB_LOG', datalist)
 
+	def sparql_conversation(self, sentence):
+		sentence_template, replaced_word_dict = sentence_to_template(sentence)
+		top_score, sparql_query = get_highest_similar_sparql(sentence_template)
+
+		if top_score>0.9:
+			sparql_query = get_complete_sparql(replaced_word_dict, sparql_query)
+			masterdb_result = db_linker.QueryToMasterKB(sparql_query)
+			print(masterdb_result)
+			if 'results' in masterdb_result:
+				if len(masterdb_result['results']['bindings'])==0:
+					return '잘 모르겠어요'
+				answer = json.dumps(masterdb_result['results']['bindings'], indent=4)
+				return answer
+			elif 'boolean' in masterdb_result:
+				if masterdb_result['boolean'] == True:
+					return '네 맞아요'
+				else:
+					return '아닌것 같아요'
+			else:
+				return '질문이 어려워요'
 	def dialog_policy(self,sentence, utterance_id):
 
 		## 이전에 시스템이 비어있는 frame argument에 대해 질문을 한 경우
@@ -292,8 +379,9 @@ class kb_agent:
 		## 아무런 상태가 아닌 경우 ( 초기 상태 )
 		else:
 			## SPARQL 쿼리로 변환 가능한 질문인 경우
-			if self.get_sparql_similarity(sentence)>0.9:
-				return self.sparql_answer(sentence)
+			sparql_answer = self.sparql_conversation(sentence)
+			if sparql_answer is not None:
+				return sparql_answer
 
 			frames = sentence_parser.Frame_Interpreter(sentence,target='v')
 
