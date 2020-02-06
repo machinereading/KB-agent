@@ -278,15 +278,16 @@ class kb_agent:
 				entity = entities[-1]['uri']
 				self.save_knowledge([[self.question_triple[0],self.question_triple[1],entity]], utterance_id)
 				answer += self.nlg_with_triple([[self.question_triple[0],self.question_triple[1],entity]],'Knowledge_inform')
-
-				if len(self.entity_question_triple_list) > 0:
-					self.question_triple = self.entity_question_triple_list.pop(0)
-					answer = answer + self.triple_question_generation(self.question_triple)
-				else:
-					self.pre_system_dialog_act = None
-					answer += '감사합니다.'
 			else:
-				answer = '무슨말씀이신지 잘 모르겠어요.'
+				answer = '무슨말씀이신지 잘 모르겠어요. 넘어갈게요!'
+				
+			if len(self.entity_question_triple_list) > 0:
+				self.question_triple = self.entity_question_triple_list.pop(0)
+				answer = answer + self.triple_question_generation(self.question_triple)
+			else:
+				self.pre_system_dialog_act = None
+				answer += '감사합니다.'
+
 			return answer
 		## 아무런 상태가 아닌 경우 ( 초기 상태 )
 		else:
