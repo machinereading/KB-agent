@@ -279,7 +279,7 @@ class kb_agent:
 				self.save_knowledge([[self.question_triple[0],self.question_triple[1],entity]], utterance_id)
 				answer += self.nlg_with_triple([[self.question_triple[0],self.question_triple[1],entity]],'Knowledge_inform')
 			else:
-				answer = '무슨말씀이신지 잘 모르겠어요. 넘어갈게요!'
+				answer = '무슨말씀이신지 잘 모르겠어요. 넘어갈게요!\n'
 
 			if len(self.entity_question_triple_list) > 0:
 				self.question_triple = self.entity_question_triple_list.pop(0)
@@ -313,8 +313,8 @@ class kb_agent:
 			if len(entities)>0:
 				answer = ''
 				## Entity summarization을 통해 정보 제공
-				#summarized_triples = entity_summarization.ES(entities[0]['text'])
-				#answer = self.nlg_with_triple(summarized_triples, 'Knowledge_inform')
+				summarized_triples = entity_summarization.ES(entities[0]['text'])
+				answer = self.nlg_with_triple(summarized_triples, 'Knowledge_inform')
 
 
 				entity_type = self.get_entity_type(entities)

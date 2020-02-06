@@ -246,15 +246,7 @@ def QueryToUserKB(query: str):
 	request = r.json()
 
 	return request
-	#request = json.loads(r.data.decode('UTF-8'))
-	# if 'ASK' in query:
-	# 	result_list = request['boolean']
-	# elif 'SELECT' in query:
-	# 	result_list = request['results']['bindings']
-	# else:
-	# 	result_list = None
 
-	# return {"user_id": user_name, "query_result": result_list}
 
 def InsertKnowledgeToUserKB(user_name: str, triple):
 	def converter(s, p, o):
