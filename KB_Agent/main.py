@@ -233,9 +233,9 @@ class kb_agent:
 			userdb_result = db_linker.QueryToUserKB(userdb_query)
 			
 			if masterdb_result['boolean'] == False and userdb_result['boolean'] == False:
-				question_list.append([entities[0]['text'],candidate_property],'?o')
+				question_list.append([entities[0]['text'],candidate_property,'?o'])
 				question_num += 1
-				
+
 		return question_list
 
 	def triple_question_generation(self, triple):
