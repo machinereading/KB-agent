@@ -104,7 +104,7 @@ def AddNewUser(user_name):
 	conn.close()
 	AddNewUserInKB(user_name)
 
-	return result
+	return result[0][0]
 
 def QueryToDatabase(query):
 	conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword, db=dialogDBDatabase,
@@ -181,7 +181,6 @@ def InsertDataToTable(table_name,data_list):
 
 		for item in data.items():
 			keys = keys + ',' + item[0]
-			print(item[1])
 			if str(type(item[1])) == "<class 'str'>":
 				text = item[1].replace("'","''")
 				values = values + ",'" + text +"'"
