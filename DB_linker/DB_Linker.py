@@ -98,7 +98,7 @@ def AddNewUser(user_name):
 		result = curs.fetchall()
 		
 	except Exception as e:
-
+		print(e)
 	curs.close()	
 	conn.commit()
 	conn.close()
