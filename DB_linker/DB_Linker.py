@@ -91,13 +91,13 @@ def AddNewUser(user_name):
 	except Exception as e:
 		print(e)
 
-	sql = "SELECT user_id FROM USER WHERE user_name = {}".format(user_name.strip())
+
+	sql = "SELECT LAST_INSERT_ID()"
 	try:
 		curs.execute(sql)
 		result = curs.fetchall()
-	
+		
 	except Exception as e:
-		print(e)
 
 	curs.close()	
 	conn.commit()
