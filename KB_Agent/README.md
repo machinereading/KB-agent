@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ## How to run
 * API ver
 ```
-python chat_api.py
+python main.py
 ```
 Input/Output
 
@@ -31,7 +31,7 @@ Input/Output
 
 
 ## Mailing List
-`asm427@kaist.ac.kr`  
+`kuonom@kaist.ac.kr`  
 
 
 ## Acknowledgement
