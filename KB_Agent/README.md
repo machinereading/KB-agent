@@ -28,7 +28,7 @@ Input/Output
 |entities | 이전 Output Value와 동일(최초 대화시에는 빈 리스트) | 인식된 entity 리스트 |
 |q_list | 이전 Output Value와 동일(최초 대화시에는 빈 리스트) | 인식된 frame 혹은 enitity에 대한 질문 리스트 |
 |knowledge | 이전 Output Value와 동일(최초 대화시에는 빈 리스트) | 사용자로부터 습득한 지식 리스트 |
-
+ 
 
 ## Mailing List
 `kuonom@kaist.ac.kr`  

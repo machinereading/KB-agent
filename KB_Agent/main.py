@@ -18,6 +18,7 @@ def jsonload(fname, encoding="utf-8"):
 		j = json.load(f)
 	return j
 
+
 embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder/1")
 session = tf.Session()
 session.run([tf.global_variables_initializer(), tf.tables_initializer()])
@@ -450,7 +451,7 @@ global_command = ['stop']
 
 
 if __name__ == "__main__":
-
+	print('system 작동 시작')
 	print('system : 사용자 이름을 입력해주세요.')
 	user_name = input()
 
@@ -466,7 +467,7 @@ if __name__ == "__main__":
 			break
 
 		system_utterance = chat_bot.chat(user_utterance,utterance_id)
-		chat_bot.save_utterance(system_utterance,'system')
+		chat_bot.save_utterance(system_utterance, 'system')
 		print('system : ' + system_utterance)
 
 

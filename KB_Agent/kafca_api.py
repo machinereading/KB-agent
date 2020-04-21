@@ -368,7 +368,7 @@ if __name__ == '__main__':
 	for row in open('./ESBM_benchmark/kbox/141/141_desc.nt', 'rb'):
 		tmp_KB.append(row.split()[0]+' '+row.split()[1]+' '+row.split()[2]+' '+row.split()[3])
 	print len(tmp_KB)
-	print extract_sumz(tmp_KB, '<애플_(기업)>')
+	print extract_sumz(tmp_KB, '<애플_(기업)>') 
 	'''
 	app.run(debug=True, host='0.0.0.0', port=5000)
 	#app.run(debug=True, host="143.248.136.214", port=5000)
