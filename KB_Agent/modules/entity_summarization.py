@@ -97,7 +97,6 @@ def find_Knowledge(entity):
 	tmp_dict = {}
 	tmp_dict["entity"] = entity
 	tmp_dict["KB"] = result_list
-
 	return tmp_dict
 
 
@@ -108,12 +107,17 @@ def entity_summary(input_json):
 		entity_summaryURL,
 		body=json.dumps(input_json)
 	)
-
 	return json.loads(response.data)
+
 
 def ES(entity):
 	tmp_dict = find_Knowledge(entity)
 	return entity_summary(tmp_dict)['top5']
+
+
+def es_for_five_ten(entity):
+	tmp_dict = find_Knowledge(entity)
+	return entity_summary(tmp_dict)
 
 
 if __name__ == "__main__":

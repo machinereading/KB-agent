@@ -6,7 +6,7 @@ import json
 def Frame_Interpreter(text,target='all'):
 	
 	#Kor_FrameNet
-	targetURL = "http://wisekb.kaist.ac.kr:1107/FRDF"
+	targetURL = "http://143.248.135.188:1107/frameBERT"
 	headers = {'Content-Type': 'application/json; charset=utf-8'}
 	requestJson = {
 		"text": text,

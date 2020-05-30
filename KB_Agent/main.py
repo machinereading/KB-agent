@@ -18,10 +18,10 @@ def jsonload(fname, encoding="utf-8"):
 		j = json.load(f)
 	return j
 
-
-embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder/1")
-session = tf.Session()
-session.run([tf.global_variables_initializer(), tf.tables_initializer()])
+#
+# embed = hub.Module("https://tfhub.dev/google/universal-sentence-encoder/1")
+# session = tf.Session()
+# session.run([tf.global_variables_initializer(), tf.tables_initializer()])
 
 template_dict = jsonload('./data/template_dict.json')
 
@@ -380,11 +380,11 @@ class kb_agent:
 		## 아무런 상태가 아닌 경우 ( 초기 상태 )
 		else:
 			## SPARQL 쿼리로 변환 가능한 질문인 경우
-			sparql_answer = self.sparql_conversation(sentence)
-			if sparql_answer is not None:
-				return sparql_answer
+			# sparql_answer = self.sparql_conversation(sentence)
+			# if sparql_answer is not None:
+			# 	return sparql_answer
 
-			frames = sentence_parser.Frame_Interpreter(sentence,target='v')
+			frames = sentence_parser.Frame_Interpreter(sentence, target='v')
 
 			## frame이 잡힌경우
 			if len(frames)>0:
@@ -402,6 +402,7 @@ class kb_agent:
 			if len(entities)>0:
 				answer = ''
 				## Entity summarization을 통해 정보 제공
+				print(entities[0]['text'])
 				summarized_triples = entity_summarization.ES(entities[0]['text'])
 				answer = self.nlg_with_triple(summarized_triples, 'Knowledge_inform')
 
@@ -461,14 +462,13 @@ if __name__ == "__main__":
 
 	while True:
 		user_utterance = input()
-		utterance_id = chat_bot.save_utterance(user_utterance,'user')
+		utterance_id = chat_bot.save_utterance(user_utterance, 'user')
 
 		if user_utterance in global_command:
 			break
 
-		system_utterance = chat_bot.chat(user_utterance,utterance_id)
+		system_utterance = chat_bot.chat(user_utterance, utterance_id)
 		chat_bot.save_utterance(system_utterance, 'system')
 		print('system : ' + system_utterance)
 
 
-	
