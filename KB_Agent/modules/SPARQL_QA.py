@@ -5,10 +5,16 @@ import requests
 import sys
 import numpy as np
 import constant
+<<<<<<< HEAD
 
 KB_AGENT_PATH = constant.KB_AGENT_PATH
 
 sys.path.append(KB_AGENT_PATH + 'DB_linker/')
+=======
+KB_AGENT_PATH = constant.KB_AGENT_PATH
+
+sys.path.append(KB_AGENT_PATH+'DB_linker/')
+>>>>>>> 27b42cbcba9413287d87d584e4200ba037727d06
 import DB_Linker as db_linker
 
 
@@ -19,12 +25,20 @@ def jsonload(fname, encoding="utf-8"):
     return j
 
 
+<<<<<<< HEAD
 # module = https://tfhub.dev/google/universal-sentence-encoder/4
 embed = hub.load(KB_AGENT_PATH + "KB_Agent/modules/tf_models/063d866c06683311b44b4992fd46003be952409c")
 # session = tf.Session()
 # session.run([tf.global_variables_initializer(), tf.tables_initializer()])
 
 template_dict_path = KB_AGENT_PATH + 'KB_Agent/data/template_dict.jsonv2'
+=======
+embed = hub.load(KB_AGENT_PATH+"KB_Agent/modules/tf_models/063d866c06683311b44b4992fd46003be952409c")
+# session = tf.Session()
+# session.run([tf.global_variables_initializer(), tf.tables_initializer()])
+
+template_dict_path = KB_AGENT_PATH+'KB_Agent/data/template_dict.jsonv2'
+>>>>>>> 27b42cbcba9413287d87d584e4200ba037727d06
 template_dict = jsonload(template_dict_path)
 
 
@@ -110,7 +124,10 @@ def sparql_conversation(sentence):
             return '질문이 어려워요'
     return None
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 27b42cbcba9413287d87d584e4200ba037727d06
 def jsondump(j, fname):
     with open(fname, "w", encoding="UTF8") as f:
         json.dump(j, f, ensure_ascii=False, indent="\t")
@@ -121,7 +138,11 @@ def update_template_dict():
         embedding = embed([template['template']])
         template['template_use_embedding'] = embedding[0].numpy().tolist()
     print(template_dict[0])
+<<<<<<< HEAD
     jsondump(template_dict, template_dict_path + 'v2')
+=======
+    jsondump(template_dict, template_dict_path+'v2')
+>>>>>>> 27b42cbcba9413287d87d584e4200ba037727d06
 
 
 if __name__ == "__main__":
