@@ -81,7 +81,7 @@ def extract_sumz():
 	import os
 	import csv
 	import copy
-
+	print 'summary'
 	input_json = request.get_json(force=True)
 	#print input_json
 	print type(input_json)
