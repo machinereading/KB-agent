@@ -1,1 +1,1 @@
-KB_AGENT_PATH="/home/ybjeong/project/KB-agent/"
+KB_AGENT_PATH = "/home/ybjeong/project/KB-agent/"

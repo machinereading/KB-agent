@@ -1,229 +1,840 @@
-# Flagship 5차년도 SW작성 가이드
+# Flagship 5차년도 KB-Agent Readme
 
 버전: 0.9
-작성자: 김희성
-히스토리: 2020/04/13, 초안작성
+작성자: 정용빈
 
 ***
 
-## 1. 개발환경
+#### Note
 
-* 소프트웨어 개발 시 언어 및 프레임워크의 버전은 아래 명시된 버전을 기본으로 함
-
-#### 목적
-* 서비스 서버 환경의 업데이트에 따라 언어 및 프레임워크의 버전 가이드가 요구됨.
-* 다만, 최종 모듈 소프트웨어가 Restful API 형태로로 제출하고 컨테이너 패키징하여 환경 의존성을 최소화하므로 요구된 인터페이스 요건을 충족하고 이유가 설명 가능할 경우 다른 버전을 사용할 수 있음
-
-#### 서버환경
-* OS: Ubuntu 18.04 or 16.04
-* Container : Docker community 19.03, Nvidia-docker v2.*
-* GPU driver : Nvidia CUDA 10.1 or 10.2
-
-#### 권장사항
-* 파이썬 : Python3.6 이상
-* 프레임워크: Pytorch 1.3 이상
-* Tensorflow 1.14 이상
-
-* Python2 2020년 1월 공식 지원 종료
+* (2020/05/30) 5월 마스터 버전이 업데이트 되었습니다.
 
 ***
 
-## 2. 코드스타일
-* 파이썬 코드 작성 표준은 PEP8 문서를 기준으로 한다.
- 
- * 표준 PEP 8 -- Style Guide for Python Code (https://www.python.org/dev/peps/pep-0008/)
- * 참조 http://google.github.io/styleguide/pyguide.html
+#### System/SW Overview
 
- 
-***
+* 대화 모듈의 대화 흐름및 대화에 필요한 다양한 정보들을 사용자별로 기록 할 수 있는 데이터베이스 및 지식베이스 구성
 
-## 3. README.md 작성양식
+* 데이터베이스에 사용자별 정보 기록 및 불러오기를 할 수 있는 모듈 제공(multi-Conv.Kernel)
 
-아래 양식 순서에 따라 작성하고 해당 없는 항목에 대해서는 해당 없음을 명시함.
-향후 해당 자료로 소프트웨어 설계, 소개 문서 작성이 가능할 정도로 상세히 작성함.
+* 데이터베이스 및 지식베이스를 활용한 대화 모듈 제공
 
-***
+  * SPARQLQA(KGQA) - 지식베이스를 활용하여 사용자의 일반지식 질문에 대하여 답변
+  * FrameQA - Frame parser를 이용하여 사용자와의 대화에서 빠진 정보를 파악하여 사용자에게 질문
+  * Knowledge acquisition conversation - 지금 대화 주제와 관련해 지식베이스에 존재하지 않는 지식에 대해 사용자에게 질문
 
-#### (필수) Note
+* KB-Agent: multi-Conv.Kernel을 이용하여 사용자 조회 및 사용자의 과거 대화내용을 활용하여 어떤 대화 모듈을 선택할것인지 결정 등을 하는 채팅 모듈
 
-* 주요 알림 사항과 리비전 히스토리에 대해 공지
+* multi-Conv.Kernel: 지식베이스 및 데이터베이스에 접근 할 수 있는 다양한 기능 제공
 
-> e.g. (2020/04/14) 4월 마스터 버전이 업데이트 되었습니다.
+  
+
+![ex_screenshot](./img/main_picture.PNG)
 
 ***
 
-#### (필수) System/SW Overview
+#### How to Install
 
-* 개발목표와 최종 결과물의 동작을 설명하고, 시스템/SW 대표 그림을 첨부한다. 
-
-> e.g. 이미지 삽입방법 예시: ![ex_screenshot](./img/screenshot.png)
-
-***
-
-#### (필수) How to Install
-
-* 인스톨 방법과 커맨드를 명시한다.
-* e.g. 
+* conda를 이용하여 python package를 설치한다.
 ```(bash)
-pip install -r requirements.txt -r requirements-local.txt
+conda env create --file conda-environment.yaml (./KB_Agent/)
 ```
 
 ***
 
-#### (필수) Main requirement
+#### Main requirement
 
-* 주요 라이브러리를 명시한다.
-
-> e.g. 
-> * python 3.6.2
-> * tensorflow 1.14
-> * keras 2.2.4
+> * python 3.7.6
+> * pymysql 0.9.3
+> * flask
 
 ***
 
-#### (필수) Network Architecture and features
+#### Network Architecture and features
 
-* 대표 네트워크 아키텍처 그림을 첨부한다.
-* 모델의 핵심기능을 나열한다.
-* 레이어별 주요 특징을 설명한다.
-* 평가방법에 대해 설명한다.
-
-> e.g.
-> * **Model:**
-> * Hierarchical Recurrent Encoder-Decoder (HRED) architecture for handling deep dialog context[3].
-> * Multilayer RNN with GRU cells. The first layer of the utterance-level encoder is always bidirectional. By default, CuDNNGRU implementation is used for ~25% acceleration during inference.
-> * ...
-> * **Word embedding layer:**
-> * May be initialized using w2v model trained on your corpus.
-> * Embedding layer may be either fixed or fine-tuned along with other weights of the network.
-> * ...
-> * **Decoding**
-> * Reranking of the generated candidates is performed according to the log-likelihood or MMI-criteria. See configuration settings description for details. 
-> * ...
-> * **Metrics:**
-> * Perplexity
-> * n-gram distinct metrics adjusted to the samples size[4].
-> * Ranking metrics: mean average precision and mean recall@k.
-> * ...
+* SPARQL QA에 대해 개발 예정
 
 ***
 
-#### (필수) Quick start
+#### Quick start
 
-* 최종 결과에 대해 테스트할 수 있는 방법 및 절차에 대해 단계별로 작성한다.
-* 설치부터 인풋, 모델을 통과한 출력을 기록한다. (아래는 양식에 대한 예시)
-* Step0, Step1, Step2, ... 등으로 네이밍한다.
-
-> e.g.
-> * Step2. GPU Version - 호스트 머신에서 아래 명령을 실행한다. 
+> * Step0. Conda를 actication 한 뒤 DB_linker 및 KB_Agent에 있는 app.py를 각각 실행하여 API를 open한다.
 > ```
-> python tools/test_api.py -f localhost -p 8080 -c "hi!" -c "hi, how are you?" -c "good!" -e "joy"
+> conda activate {ENV_NAME}
+> python3 app.py (..../DB_linker/app.py)
+> python3 app.py (..../KB_Agent/app.py)
 > ```
 >
-> * Step3. GPU Version - 다음과 같은 reponse를 얻는다.
+> * Step1. Postman과 같은 tool을 이용하여 각 API를 호출한다.
 > ```
-> {'response': "I'm fine!"}
+> /respond_to_user_utterance
+> {
+> 	"user_id": "59",
+> 	"user_name": null,
+> 	"user_utterance": "나는 독일에서 지냈어",
+> 	"session_id": null,
+> 	"modules": ["sparql_qa", "frame_qa", "kowledge_acquire"]
+> }
 > ```
-
-#### (선택) Training Data
-* 트레이닝 데이터에 대한 소개
-
-> *The model was trained on a preprocessed Twitter corpus with ~10 million dialogs (1Gb of text data).
-> To clean up the corpus, we removed
-> * URLs, retweets and citations;
-> * mentions and hashtags that are not preceded by regular words or punctuation marks;
-> * messages that contain more than 20 tokens.
 >
-> conversational datasets can be found here: https://www.github.io/DialogDatasets/
-
-***
-
-#### (선택) Training Model
-
-* 모델을 트레이닝하는 방법에 대해
-* Traing from Scratch or fine-tuning the provided trained model 중 해당 하는 것을 선택하여 기록한다.
-
-> e.g. 
->1. Put your training text corpus to
->[`data/corpora_processed/train_processed_dialogs.txt`](data/corpora_processed/train_processed_dialogs.txt).
-
->1. Set up training parameters in [`test_api/config.py`](test_api/config.py).
->See [configuration settings description](#configuration-settings) for more details.
-
-> 1. Consider running `PYTHONHASHSEED=42 python tools/prepare_index_files.py` to build the index files with tokens and
-> conditions from the training corpus. Make sure to set `PYTHONHASHSEED` environment variable, otherwise you may get
-> different index files for different launches of the script.
-> **Warning:** this script overwrites the original tokens index files `data/tokens_index/t_idx_processed_dialogs.json` and
-> `data/conditions_index/c_idx_processed_dialogs.json`.
-> You should only run this script in case your corpus is large enough to contain all the words that you want your model
-> to understand. Otherwise, consider fine-tuning the pre-trained model as described above. If you messed up with index
-> files and want to get the default versions, delete your copies and run `python tools/fetch.py` anew.
-
-> 1. Consider running `python tools/train_w2v.py` to build w2v embedding from the training corpus.
-> **Warning:** this script overwrites the original w2v weights that are stored in `data/w2v_models`.
-> You should only run this script in case your corpus is large enough to contain all the words that you want your model
-> to understand. Otherwise, consider fine-tuning the pre-trained model as described above. If you messed up with w2v
-> files and want to get the default version, delete your file copy and run `python tools/fetch.py` anew.
-
-> 1. Run `python tools/train.py`.
->     1. Don't forget to set `CUDA_VISIBLE_DEVICES=<GPU_ID>` environment variable (with <GPU_ID>
->        as in output of **nvidia-smi** command) if you want to use GPU. For example `CUDA_VISIBLE_DEVICES=0 python tools/train.py`
->        will run the train process on the 0-th GPU.
->     1. Use parameter `-s` to train the model on a subset of the first N samples of your training data to speed up
-> preprocessing for debugging. For example, run `python tools/train.py -s 1000` to train on the first 1000 samples.
-
-> 1. You can also set `IS_DEV=1` to enable the "development mode". It uses a reduced number of model parameters
->    (decreased hidden layer dimensions, input and output sizes of token sequences, etc.) and performs verbose logging.
->    Refer to the bottom lines of `cakechat/config.py` for the complete list of dev params.
-
-> Weights of the trained model are saved to `results/nn_models/`.
-
-***
-
-#### (선택) Validation metrics calculation
-
-During training the following datasets are used for validations metrics calculation:
-
-> e.g.
-> * [`data/corpora_processed/val_processed_dialogs.txt`](data/corpora_processed/val_processed_dialogs.txt)(dummy example, replace with your data) – for the context-sensitive dataset
-> * [`data/quality/context_free_validation_set.txt`](data/quality/context_free_validation_set.txt) – for the context-free validation dataset
-> * [`data/quality/context_free_questions.txt`](data/quality/context_free_questions.txt) – is used for generating responses for logging and computing distinct-metrics
-> * [`data/quality/context_free_test_set.txt`](data/quality/context_free_test_set.txt) – is used for computing metrics of the trained model, e.g. ranking metrics
-
-> The metrics are stored to `test_api/results/tensorboard` and can be visualized using
-> [Tensorboard](https://www.tensorflow.org/guide/summaries_and_tensorboard).
-> If you run a docker container from the provided CPU or GPU-enabled docker image, tensorboard server should start
-> automatically and serve on `http://localhost:6006`. Open this link in your browser to see the training graphs.
-
-> If you installed the requirements manually, start tensorboard server first by running the following command from your
-
-> test_api root directory:
+> * Step2. response된 결과를 확인한다.
+>
 > ```
-> mkdir -p results/tensorboard && tensorboard --logdir=results/tensorboard 2>results/tensorboard/err.log &
+> {
+>     "answer": "누구와 지냈나요?"
+> }
 > ```
 
-> After that proceed to `http://localhost:6006`.
-
 ***
 
-#### (필수) HTTP-server API description
+#### HTTP-server API description
 
-* **path, parameter, response를 명시한다.**
+* **DB_Linker(multi-Conv.Kernel)**
 
-> *  /test_api/v1/actions/get_response
+> *  /AddUserListInfo
 > * JSON parameters are:
 
 > |Parameter|Type|Description|
 > |---|---|---|
-> |context|list of strings|List of previous messages from the dialogue history (max. 3 is used)|
-> |emotion|string, one of enum|One of {'neutral', 'anger', 'joy', 'fear', 'sadness'}. An emotion to condition the response on. Optional param, if not specified, 'neutral' is used|
+> |*user_id|num|id of user in table USER (key) to refer|
+> |user_interest_celeb|list of strings|celebs to add in user information|
+> |user_interest_hobby|list of strings|hobbies to add in user information|
+> |user_interest_location|list of strings|locations to add in user information|
+> |user_topic|list of strings|topics to add in user information|
 
 > * Request
 > ```
-> POST /test_api/v1/actions/get_response
+> POST /AddUserListInfo
 > data: {
-> 'context': ['Hello', 'Hi!', 'How are you?'],
-> 'emotion': 'joy'
+> 	"user_id":53,
+> 	"user_interest_celeb":["IU"],
+> 	"user_interest_hobby":["soccer", "baseball"],
+> 	"user_interest_location":["Jinju", "Roma"],
+> 	"user_topic":["computer", "NLP"]
+> }
+> ```
+
+> * Response OK (변경후 user의 정보를 반환)
+> ```
+> 200 OK
+> {
+>     "USER_INTEREST_CELEB": [
+>         "IU"
+>     ],
+>     "USER_INTEREST_HOBBY": [
+>         "soccer",
+>         "baseball"
+>     ],
+>     "USER_INTEREST_LOCATION": [
+>         "busan",
+>         "seoul",
+>         "Jinju",
+>         "Roma"
+>     ],
+>     "USER_TOPIC": [
+>         "food",
+>         "computer",
+>         "NLP"
+>     ],
+>     "user_age": 10,
+>     "user_birth": "Thu, 28 Apr 1994 00:00:00 GMT",
+>     "user_current_city": null,
+>     "user_gender": null,
+>     "user_hometown": "busan",
+>     "user_id": 53,
+>     "user_job_title": null,
+>     "user_name": "test",
+>     "user_professional": null
+> }
+> ```
+
+> 
+>
+> *  /DeleteUserListInfo
+> *  JSON parameters are:
+
+> | Parameter              | Type            | Description                             |
+> | ---------------------- | --------------- | --------------------------------------- |
+> | *user_id               | num             | id of user in table USER (key) to refer |
+> | user_interest_celeb    | list of strings | celebs to delete in user information    |
+> | user_interest_hobby    | list of strings | hobbies to delete in user information   |
+> | user_interest_location | list of strings | locations to delete in user information |
+> | user_topic             | list of strings | topics to delete in user information    |
+
+> * Request
+>
+> ```
+> POST /DeleteUserListInfo
+> data: {
+> 	"user_id":53,
+> 	"user_interest_celeb":["IU"],
+> 	"user_interest_hobby":["soccer", "baseball"],
+> 	"user_interest_location":["Jinju", "Roma"],
+> 	"user_topic":["computer", "NLP"]
+> }
+> ```
+
+> * Response OK (변경후 user의 정보를 반환)
+>
+> ```
+> 200 OK
+> {
+>     "USER_INTEREST_CELEB": [],
+>     "USER_INTEREST_HOBBY": [],
+>     "USER_INTEREST_LOCATION": [
+>         "busan",
+>         "seoul"
+>     ],
+>     "USER_TOPIC": [
+>         "food"
+>     ],
+>     "user_age": 10,
+>     "user_birth": "Thu, 28 Apr 1994 00:00:00 GMT",
+>     "user_current_city": null,
+>     "user_gender": null,
+>     "user_hometown": "busan",
+>     "user_id": 53,
+>     "user_job_title": null,
+>     "user_name": "test",
+>     "user_professional": null
+> }
+> ```
+
+> 
+>
+> *  /UpdateUserInfo
+> *  JSON parameters are: 
+> *  (user_id or user_name 중 하나는 필수, 변경하고싶지 않은 칼럼은 null값 입력)
+
+> | Parameter         | Type                | Description                             |
+> | ----------------- | ------------------- | --------------------------------------- |
+> | *user_id          | num                 | id of user in table USER (key) to refer |
+> | user_name         | string              | user name                               |
+> | user_age          | num                 | user age                                |
+> | user_birth        | datetime            | user birth date                         |
+> | user_gender       | string, one of enum | one of ["M","F"], user gender           |
+> | user_current_city | string              | user current city                       |
+> | user_hometown     | string              | user hometown                           |
+> | user_professional | string              | user professional                       |
+> | user_job_title    | string              | user job name                           |
+
+> * Request
+>
+> ```
+> POST /UpdateUserInfo
+> data: {
+> 	"user_id":53,
+> 	"user_name":null,
+> 	"user_age":null,
+> 	"user_birth":"1994-03-18",
+> 	"user_gender":"M",
+> 	"user_current_city":null,
+> 	"user_hometown":"Jinju",
+> 	"user_professional":"NLP",
+> 	"user_job_title":"Student"
+> }
+> ```
+
+> * Response OK (변경후 user의 정보를 반환)
+>
+> ```
+> 200 OK
+> {
+>     "USER_INTEREST_CELEB": [
+>         "IU"
+>     ],
+>     "USER_INTEREST_HOBBY": [
+>         "soccer",
+>         "baseball"
+>     ],
+>     "USER_INTEREST_LOCATION": [
+>         "busan",
+>         "seoul",
+>         "Jinju",
+>         "Roma"
+>     ],
+>     "USER_TOPIC": [
+>         "food",
+>         "computer",
+>         "NLP"
+>     ],
+>     "user_age": 10,
+>     "user_birth": "Fri, 18 Mar 1994 00:00:00 GMT",
+>     "user_current_city": null,
+>     "user_gender": "M",
+>     "user_hometown": "Jinju",
+>     "user_id": 53,
+>     "user_job_title": "Student",
+>     "user_name": "test",
+>     "user_professional": "NLP"
+> }
+> ```
+
+> 
+>
+> *  /LookUpUsers
+> *  JSON parameters are:
+
+> | Parameter | Type | Description |
+> | --------- | ---- | ----------- |
+> | None      |      |             |
+
+> * Request (POST, GET)
+>
+> ```
+> POST /LookUpUsers
+> data: 
+> ```
+
+> * Response OK (user 목록 반환)
+>
+> ```
+> 200 OK
+> {
+>     "user_list": [
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 42,
+>             "user_job_title": null,
+>             "user_name": "jyb",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 43,
+>             "user_job_title": null,
+>             "user_name": "ybjeong",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 46,
+>             "user_job_title": null,
+>             "user_name": "apiTestUser",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 49,
+>             "user_job_title": null,
+>             "user_name": "apiTestUser2",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 51,
+>             "user_job_title": null,
+>             "user_name": "apiTestUser3",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 52,
+>             "user_job_title": null,
+>             "user_name": "apiTestUser4",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": 10,
+>             "user_birth": "Fri, 18 Mar 1994 00:00:00 GMT",
+>             "user_current_city": null,
+>             "user_gender": "M",
+>             "user_hometown": "Jinju",
+>             "user_id": 53,
+>             "user_job_title": "Student",
+>             "user_name": "test",
+>             "user_professional": "NLP"
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 54,
+>             "user_job_title": null,
+>             "user_name": "test1",
+>             "user_professional": null
+>         },
+>         {
+>             "user_age": null,
+>             "user_birth": null,
+>             "user_current_city": null,
+>             "user_gender": null,
+>             "user_hometown": null,
+>             "user_id": 55,
+>             "user_job_title": null,
+>             "user_name": "test2",
+>             "user_professional": null
+>         }
+>     ]
+> }
+> ```
+
+> 
+>
+> *  /GetUserInfo
+> *  JSON parameters are:
+> *  (user_id or user_name 중 하나는 필수)
+
+> | Parameter | Type   | Description                             |
+> | --------- | ------ | --------------------------------------- |
+> | user_id   | num    | id of user in table USER (key) to refer |
+> | user_name | string | user name                               |
+
+> * Request (POST, GET)
+>
+> ```
+> POST /GetUserInfo
+> data: {
+> 	"user_id":53,
+> 	"user_name":null
+> }
+> ```
+
+> * Response OK (요청한 user의 정보 반환)
+>
+> ```
+> 200 OK
+> {
+>     "USER_INTEREST_CELEB": [
+>         "IU"
+>     ],
+>     "USER_INTEREST_HOBBY": [
+>         "soccer",
+>         "baseball"
+>     ],
+>     "USER_INTEREST_LOCATION": [
+>         "busan",
+>         "seoul",
+>         "Jinju",
+>         "Roma"
+>     ],
+>     "USER_TOPIC": [
+>         "food",
+>         "computer",
+>         "NLP"
+>     ],
+>     "user_age": 10,
+>     "user_birth": "Fri, 18 Mar 1994 00:00:00 GMT",
+>     "user_current_city": null,
+>     "user_gender": "M",
+>     "user_hometown": "Jinju",
+>     "user_id": 53,
+>     "user_job_title": "Student",
+>     "user_name": "test",
+>     "user_professional": "NLP"
+> }
+> ```
+
+> 
+>
+> *  /AddNewUser
+> *  JSON parameters are:
+
+> | Parameter | Type   | Description      |
+> | --------- | ------ | ---------------- |
+> | *name     | string | user name to add |
+
+> * Request
+>
+> ```
+> POST /AddNewUser
+> data: {
+> 	"user_name":"new_user2"
+> }
+> ```
+
+> * Response OK (추가된 user의 정보를 반환)
+>
+> ```
+> 200 OK
+> {
+>     "USER_INTEREST_CELEB": [],
+>     "USER_INTEREST_HOBBY": [],
+>     "USER_INTEREST_LOCATION": [],
+>     "USER_TOPIC": [],
+>     "user_age": null,
+>     "user_birth": null,
+>     "user_current_city": null,
+>     "user_gender": null,
+>     "user_hometown": null,
+>     "user_id": 58,
+>     "user_job_title": null,
+>     "user_name": "new_user2",
+>     "user_professional": null
+> }
+> ```
+
+> 
+>
+> *  /GetUtterances
+> *  JSON parameters are:
+
+> | Parameter  | Type | Description                                                  |
+> | ---------- | ---- | ------------------------------------------------------------ |
+> | *user_id   | num  | id of user in table USER (key) to refer                      |
+> | session_id | num  | target session id to get utterances (if session_id is null, all utterances of user are selected) |
+
+> * Request (session_id를 입력하면 해당 session의 대화만 불러오지만 null을 입력하면 해당 유저의 모든 대화 기록을 가져온다.)
+>
+> ```
+> POST /GetUtterances
+> data: {
+> 	"user_id":55,
+> 	"session_id":330
+> }
+> ```
+
+> * Response OK (대화 기록 반환)
+>
+> ```
+> 200 OK
+> {
+>     "utterances": [
+>         {
+>             "date_time": "Thu, 28 May 2020 18:32:22 GMT",
+>             "emotion": null,
+>             "feedback": null,
+>             "intent_emp": null,
+>             "intent_req": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "query_id": 1,
+>             "session_id": 330,
+>             "speaker": "user",
+>             "turn_id": 1,
+>             "u.session_id": 330,
+>             "user_id": 55,
+>             "utterance": "user test2의 말입니다.",
+>             "utterance_id": 14
+>         },
+>         {
+>             "date_time": "Thu, 28 May 2020 18:32:22 GMT",
+>             "emotion": null,
+>             "feedback": null,
+>             "intent_emp": null,
+>             "intent_req": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "query_id": 2,
+>             "session_id": 330,
+>             "speaker": "system",
+>             "turn_id": 1,
+>             "u.session_id": 330,
+>             "user_id": 55,
+>             "utterance": "아무런 모듈에 속하지 않습니다.",
+>             "utterance_id": 15
+>         }
+>     ]
+> }
+> ```
+
+> 
+>
+> *  /SaveUtterance
+> *  JSON parameters are: 
+> *  (session_id가 null이라면 가장 최근 session에 추가)
+
+> | Parameter  | Type                | Description                                        |
+> | ---------- | ------------------- | -------------------------------------------------- |
+> | *user_id   | num                 | id of user in table USER (key) to refer            |
+> | *utterance | string              | sentenct to save                                   |
+> | session_id | num                 | session_id to add                                  |
+> | speaker    | string, one of enum | one of ["user","system"], it means who's utterance |
+> | emotion    | string              | emotion of speaker for this sentence               |
+> | intent_req | string              | intent req                                         |
+> | intent_emp | string              | intent emp                                         |
+
+> * Request
+>
+> ```
+> POST /SaveUtterance
+> data: {
+> 	"user_id":55,
+> 	"utterance":"save_new_utterance",
+> 	"session_id":null,
+> 	"speaker":"user",
+> 	"emotion":"pleasure",
+> 	"intent_req":"test_req",
+> 	"intent_emp":"test_emp"
+> }
+> ```
+
+> * Response OK (저장된 utterance의 정보 반환)
+>
+> ```
+> 200 OK
+> {
+>     "date_time": "Sat, 30 May 2020 03:38:34 GMT",
+>     "emotion": "pleasure",
+>     "intent_emp": "test_emp",
+>     "intent_req": "test_req",
+>     "query_id": 5,
+>     "session_id": 330,
+>     "speaker": "user",
+>     "turn_id": 4,
+>     "utterance": "save_new_utterance",
+>     "utterance_id": 18
+> }
+> ```
+
+> 
+>
+> *  /LookUpSessionOfUser
+> *  JSON parameters are:
+> *  (user_id or user_name 중 하나는 필수)
+
+> | Parameter | Type   | Description                             |
+> | --------- | ------ | --------------------------------------- |
+> | user_id   | num    | id of user in table USER (key) to refer |
+> | user_name | string | name of user                            |
+
+> * Request
+>
+> ```
+> POST /LookUpSessionOfUser
+> data: {
+> 	"user_id":55,
+> 	"user_name":null
+> }
+> ```
+
+> * Response OK (해당 user의 모든 session 정보 반환)
+>
+> ```
+> 200 OK
+> {
+>     "sessions": [
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 323,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 324,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 325,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": 1,
+>             "model_id": null,
+>             "session_id": 326,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 327,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 328,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 329,
+>             "user_id": 55
+>         },
+>         {
+>             "feedback": null,
+>             "mission_id": null,
+>             "model_id": null,
+>             "session_id": 330,
+>             "user_id": 55
+>         }
+>     ]
+> }
+> ```
+
+> 
+>
+> *  /GetSessionInfo
+> *  JSON parameters are:
+
+> | Parameter   | Type | Description                                  |
+> | ----------- | ---- | -------------------------------------------- |
+> | *session_id | num  | id of session in table SESSION(key) to refer |
+
+> * Request
+>
+> ```
+> POST /GetSessionInfo
+> data: {
+> 	"session_id":323
+> }
+> ```
+
+> * Response OK (변경후 user의 정보를 반환)
+>
+> ```
+> 200 OK
+> {
+>     "feedback": null,
+>     "mission_id": null,
+>     "model_id": null,
+>     "session_id": 323,
+>     "user_id": 55
+> }
+> ```
+
+> 
+>
+> *  /AddNewSession
+> *  JSON parameters are:
+
+> | Parameter  | Type   | Description                             |
+> | ---------- | ------ | --------------------------------------- |
+> | *user_id   | num    | id of user in table USER (key) to refer |
+> | model_id   | string | model id                                |
+> | mission_id | string | mission id                              |
+> | feedback   | string | feedback for session                    |
+
+> * Request
+>
+> ```
+> POST /AddNewSession
+> data: {
+> 	"user_id":55,
+> 	"model_id":1,
+> 	"mission_id":1,
+> 	"feedback":1
+> }
+> ```
+
+> * Response OK (추가된 session 정보 반환)
+>
+> ```
+> 200 OK
+> {
+>     "feedback": 1,
+>     "mission_id": 1,
+>     "model_id": 1,
+>     "session_id": 331,
+>     "user_id": 55
+> }
+> ```
+
+
+
+
+
+
+
+* **KB_Agent**
+
+> *  /user_access
+> * JSON parameters are:
+
+> (user_id or user_name 중 하나는 입력하여야함)
+> 
+> |Parameter|Type|Description|
+> |---|---|---|
+> |user_id|num|user_id for access|
+> |user_name|string|name of user for access|
+
+> * Request
+> ```
+> POST /user_access
+> {
+> 	"user_id":null,
+> 	"user_name": "ybjeong"
+> }
+> ```
+
+> * Response OK (해당 user의 정보와 새로 추가한 session의 정보를 반환, user가 신규 유저라면 새로 추가)
+> ```
+> 200 OK
+> {
+>        "session_info": {
+>            "feedback": null,
+>            "mission_id": null,
+>            "model_id": null,
+>            "session_id": 332,
+>            "user_id": 43
+>        },
+>        "user_info": {
+>            "user_age": null,
+>            "user_birth": null,
+>            "user_current_city": null,
+>            "user_gender": null,
+>            "user_hometown": null,
+>            "user_id": 43,
+>            "user_job_title": null,
+>            "user_name": "ybjeong",
+>            "user_professional": null
+>        }
+>    }
+>    ```
+
+
+> 
+>
+> *  /respond_to_user_utterance
+> * JSON parameters are:
+
+> (user_id or user_name 중 하나는 입력하여야함)
+>
+> |Parameter|Type|Description|
+> |---|---|---|
+> |user_id|num|user_id for access|
+> |user_name|string|name of user for access|
+> |*user_utterance|string|utterance of user|
+> |session_id|num|session id in conversation (if session_id is null, latest session will be selected automatically)|
+> |modules|list of string, one or many of enum|One of many of {'sparql_ql', 'frame_qa', 'knowledge_acquire'}. what modules in kb_agent are used for generating answer.|
+
+> * Request
+> ```
+> POST /respond_to_user_utterance
+> {
+> 	"user_id": "59",
+> 	"user_name": null,
+> 	"user_utterance": "기분이 어떠세요.",
+> 	"session_id": null,
+> 	"modules": ["sparql_qa", "frame_qa", "knowledge_acquire"]
 > }
 > ```
 
@@ -231,63 +842,28 @@ During training the following datasets are used for validations metrics calculat
 > ```
 > 200 OK
 > {
->  'response': 'I\'m fine!'
-> }
-> ```
+>        "answer": "어떤 응답을 해야할지 모르겠어요."
+>    }
+>    ```
+
+
 
 ***
 
-#### (필수) Repository overview
+#### Repository overview
 
 * 폴더 및 파일의 구조 및 역할(기능)을 설명한다.
 
-> e.g. 
-> * `test_api/dialog_model/` – contains computational graph, training procedure and other model utilities
-> * `test_api/dialog_model/inference/` – algorithms for response generation
-> * `test_api/dialog_model/quality/` – code for metrics calculation and logging
-> * `test_api/utils/` – utilities for text processing, w2v training, etc.
-> * `test_api/api/` – functions to run http server: API configuration, error handling
-> * `tools/` – scripts for training, testing and evaluating your model
->     * [`tools/prepare_index_files.py`](tools/prepare_index_files.py) – Prepares index for the most commonly used tokens and conditions. Use this script before training the model from scratch on your own data.
->     * [`tools/train.py`](tools/train.py) – Trains the model on your data
+> * `DB_linker/` – multi-Conv.Kernel module directory
+>     * [`DB_linker/app.py`](DB_linker/app.py) – run API of DB_linker(multi-Conv.Kernel)
+> * `KB_Agent/` – KB_Agent module directory
+>     * [`KB_Agent/app.py`](KB_Agent/app.py) – run API of KB_Agent
+> * `KB_Agent/data/` – static data for modules in KB_Agent
+> * `KB_Agent/modules/` – modules in KB_Agen
+> * `KB_Agent/modules/tf_models` – pre-trained tf_models
 
 ***
 
-#### (선택) configuration settings
+#### configuration settings
 
-* All the configuration parameters for the network architecture, training, predicting and logging steps are defined in
-[`test_api/config.py`](test_api/config.py). Some inference parameters used in an HTTP-server are defined in
-[`test_api/api/config.py`](test_api/api/config.py).
-
-> e.g.
-> * Network architecture and size
->    * `HIDDEN_LAYER_DIMENSION` is the main parameter that defines the number of hidden units in recurrent layers.
->    * `WORD_EMBEDDING_DIMENSION` and `CONDITION_EMBEDDING_DIMENSION` define the number of hidden units that each
->    token/condition are mapped into.
->
-> * Decoding algorithm:
->    * `PREDICTION_MODE_FOR_TESTS` defines how the responses of the model are generated. The options are the following:
->        - **sampling** – response is sampled from output distribution token-by-token.
->        For every token the temperature transform is performed prior to sampling.
-
-> * Note that there are other parameters that affect the response generation process.
->    See `REPETITION_PENALIZE_COEFFICIENT`, `NON_PENALIZABLE_TOKENS`, `MAX_PREDICTIONS_LENGTH`.
->
-> |Key|Value|Description|
-> |---|---|---|
-
-***
-
-## 4. API 작성
-
-* flask API https://www.flaskapi.org/
-* API Specificaion https://swagger.io/docs/specification/basic-structure/
-* API 검증 : API 테스트 결과서
-
-## 5. 단위테스트
-
-* 5월 30일 코드 제출시 단위테스트 결과서 제출
-* 단위테스트 결과 항목:
-* ** API 테스트 **
-* ** 컨테이너화 테스트 (도커이미지 생성파일: Dockerfile 작성, 도커이미지 빌드 결과:docker build, 도커 실행 결과:docker run 등) **
-
+* 미적용 - 추후 적용 예정
