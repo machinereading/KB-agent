@@ -37,12 +37,12 @@ def user_access(user_name=None, user_id=None):
     return result
 
 
-def respond_to_user_utterance(user_id=None, user_name=None, user_utterance=None, session_id=None):
+def respond_to_user_utterance(user_id=None, user_name=None, user_utterance=None, session_id=None, modules=[]):
     if user_id is None and user_name is None:
         return False
     user_info = db_linker.GetUserInfo(user_id=user_id, user_name=user_name)
 
-    answer, dialog_act = kb_agent(user_id=user_info['user_id'], user_utterance=user_utterance)
+    answer, dialog_act = kb_agent(user_id=user_info['user_id'], user_utterance=user_utterance, modules=modules)
     db_linker.SaveUtterance(user_id=user_info['user_id'], speaker='user', utterance=user_utterance,
                             session_id=session_id, intent_req=dialog_act)
     db_linker.SaveUtterance(user_id=user_info['user_id'], speaker='system', utterance=answer, session_id=session_id,
@@ -54,27 +54,29 @@ def respond_to_user_utterance(user_id=None, user_name=None, user_utterance=None,
     return response
 
 
-def kb_agent(user_id=None, user_utterance=None):
+def kb_agent(user_id=None, user_utterance=None, modules=[]):
     answer = '어떤 응답을 해야할지 모르겠어요.'
 
-    sparql_answer = SPARQL_QA.sparql_conversation(user_utterance)
-    if sparql_answer is not None:
-        answer = sparql_answer
-        return answer, None
+    if 'sparql_qa' in modules:
+        sparql_answer = SPARQL_QA.sparql_conversation(user_utterance)
+        if sparql_answer is not None:
+            answer = sparql_answer
+            return answer, 'none'
+
+    if 'frame_qa' in modules:
+        frame_answer, dialog_act = frame_QA.frame_conversation(user_id=user_id, user_utterance=user_utterance)
+        if frame_answer is not None:
+            answer = frame_answer
+            return answer, dialog_act
+
+    if 'knowledge_acquire' in modules:
+        knowledge_answer, dialog_act = knowledge_question.knowledge_conversation(user_id=user_id,
+                                                                                 user_utterance=user_utterance)
+        if knowledge_answer is not None:
+            answer = knowledge_answer
+            return answer, dialog_act
 
     return answer, 'none'
-
-    frame_answer, dialog_act = frame_QA.frame_conversation(user_id=user_id, user_utterance=user_utterance)
-    if frame_answer is not None:
-        answer = frame_answer
-        return answer, dialog_act
-
-    knowledge_answer, dialog_act = knowledge_question.knowledge_conversation(user_id=user_id,
-                                                                             user_utterance=user_utterance)
-    if knowledge_answer is not None:
-        answer = knowledge_answer
-        return answer, dialog_act
-    return answer, None
 
 
 global_command = ['stop']
@@ -87,6 +89,6 @@ if __name__ == "__main__":
     session_info = access_result['session_info']
 
     response = respond_to_user_utterance(user_id=user_info['user_id'], user_utterance='user test2의 말입니다.',
-                                         session_id=session_info['session_id'])
+                                         session_id=session_info['session_id'], modules=['sparql_qa'])
 
     print(response)

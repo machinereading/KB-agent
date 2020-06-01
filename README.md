@@ -28,8 +28,13 @@
 * multi-Conv.Kernel: 지식베이스 및 데이터베이스에 접근 할 수 있는 다양한 기능 제공
 
   
+  
+###### 전체 시스템  
+![main](./img/main_picture.PNG)
 
-![ex_screenshot](./img/main_picture.PNG)
+
+###### RDB ER 다이어그램
+![er_diagram](./img/database_ER_diagram.PNG)
 
 ***
 
