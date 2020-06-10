@@ -109,7 +109,7 @@ def sparql_conversation(sentence):
                 return '아닌것 같아요'
         else:
             return '질문이 어려워요'
-    return None
+    return None, None
 
 
 def jsondump(j, fname):

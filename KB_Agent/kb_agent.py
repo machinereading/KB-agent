@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append('../DB_linker/')
 sys.path.append('./modules/')
 import SPARQL_QA
@@ -42,9 +43,11 @@ def respond_to_user_utterance(user_id=None, user_name=None, user_utterance=None,
         return False
     user_info = db_linker.GetUserInfo(user_id=user_id, user_name=user_name)
 
-    answer, dialog_act = kb_agent(user_id=user_info['user_id'], user_utterance=user_utterance, modules=modules)
     db_linker.SaveUtterance(user_id=user_info['user_id'], speaker='user', utterance=user_utterance,
-                            session_id=session_id, intent_req=dialog_act)
+                            session_id=session_id)
+
+    answer, dialog_act = kb_agent(user_id=user_info['user_id'], user_utterance=user_utterance, modules=modules)
+    print('answer', answer)
     db_linker.SaveUtterance(user_id=user_info['user_id'], speaker='system', utterance=answer, session_id=session_id,
                             intent_req=dialog_act)
 
@@ -56,20 +59,24 @@ def respond_to_user_utterance(user_id=None, user_name=None, user_utterance=None,
 
 def kb_agent(user_id=None, user_utterance=None, modules=[]):
     answer = '어떤 응답을 해야할지 모르겠어요.'
+    last_system_utterance_info = db_linker.getLatestUtterance(user_id=user_id, speaker='system')
 
-    if 'sparql_qa' in modules:
-        sparql_answer = SPARQL_QA.sparql_conversation(user_utterance)
+    if 'sparql_qa' in modules and last_system_utterance_info['intent_req'] not in ['frame_question', 'entity_question']:
+        print('sparql_qa')
+        sparql_answer, dialog_act = SPARQL_QA.sparql_conversation(user_utterance)
         if sparql_answer is not None:
             answer = sparql_answer
             return answer, 'none'
 
-    if 'frame_qa' in modules:
-        frame_answer, dialog_act = frame_QA.frame_conversation(user_id=user_id, user_utterance=user_utterance)
+    if 'frame_qa' in modules and last_system_utterance_info['intent_req'] not in ['entity_question']:
+        print('frame_qa')
+        frame_answer, dialog_act = frame_QA.frame_conversation(user_id=user_id, utterance=user_utterance)
         if frame_answer is not None:
             answer = frame_answer
             return answer, dialog_act
 
     if 'knowledge_acquire' in modules:
+        print('knowledge_qa')
         knowledge_answer, dialog_act = knowledge_question.knowledge_conversation(user_id=user_id,
                                                                                  user_utterance=user_utterance)
         if knowledge_answer is not None:
@@ -88,7 +95,11 @@ if __name__ == "__main__":
     user_info = access_result['user_info']
     session_info = access_result['session_info']
 
-    response = respond_to_user_utterance(user_id=user_info['user_id'], user_utterance='user test2의 말입니다.',
-                                         session_id=session_info['session_id'], modules=['sparql_qa'])
+    response = respond_to_user_utterance(user_id=user_info['user_id'], user_utterance='로마에서 휴가를 보냈어',
+                                         session_id=session_info['session_id'], modules=['knowledge_acquire'])
+
+    print(response)
+    response = respond_to_user_utterance(user_id=user_info['user_id'], user_utterance='이탈리아야',
+                                         session_id=session_info['session_id'], modules=['knowledge_acquire'])
 
     print(response)

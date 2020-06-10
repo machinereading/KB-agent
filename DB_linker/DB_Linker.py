@@ -117,48 +117,71 @@ def query(query):
 # 	conn.commit()
 # 	conn.close()
 
-#
-# def InsertDataToTable(table_name, data_list):
-#     conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
-#                            db=dialogDBDatabase,
-#                            charset=dialogDBCharset)
-#     curs = conn.cursor()
-#
-#     for data in data_list:
-#         keys = ''
-#         values = ''
-#
-#         for item in data.items():
-#             keys = keys + ',' + item[0]
-#             if str(type(item[1])) == "<class 'str'>":
-#                 text = item[1].replace("'", "''")
-#                 values = values + ",'" + text + "'"
-#             elif str(type(item[1])) == "<class 'int'>":
-#                 values = values + "," + str(item[1])
-#             else:
-#                 values = values + "," + item[1]
-#
-#         keys = keys[1:]
-#         values = values[1:]
-#         sql = "INSERT INTO {}({}) VALUES({})".format(table_name, keys, values)
-#
-#         try:
-#             curs.execute(sql)
-#
-#         except Exception as e:
-#             print(e)
-#
-#         sql = "SELECT LAST_INSERT_ID()"
-#         try:
-#             curs.execute(sql)
-#             result = curs.fetchall()
-#
-#         except Exception as e:
-#             print(e)
-#     curs.close()
-#     conn.commit()
-#     conn.close()
-#     return result[0][0]
+
+def getFrameQuestionByUtteranceID(utterance_id):
+    conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
+                           db=dialogDBDatabase,
+                           charset=dialogDBCharset)
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+    sql = "SELECT * FROM FRAME_QUESTION WHERE utterance_id={}".format(utterance_id)
+
+    try:
+        curs.execute(sql)
+        result = curs.fetchall()
+
+    except Exception as e:
+        print(e)
+    curs.close()
+    conn.close()
+    if len(result) > 0:
+        answer = result[0]
+    else:
+        answer = None
+    return answer
+
+
+def InsertDataToTable(table_name, data_list):
+    conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
+                           db=dialogDBDatabase,
+                           charset=dialogDBCharset)
+    curs = conn.cursor()
+
+    for data in data_list:
+        keys = ''
+        values = ''
+
+        for item in data.items():
+            keys = keys + ',' + item[0]
+            if str(type(item[1])) == "<class 'str'>":
+                text = item[1].replace("'", "''")
+                values = values + ",'" + text + "'"
+            elif str(type(item[1])) == "<class 'int'>":
+                values = values + "," + str(item[1])
+            else:
+                values = values + "," + item[1]
+
+        keys = keys[1:]
+        values = values[1:]
+        sql = "INSERT INTO {}({}) VALUES({})".format(table_name, keys, values)
+
+        try:
+            curs.execute(sql)
+
+        except Exception as e:
+            print(e)
+
+        sql = "SELECT LAST_INSERT_ID()"
+        try:
+            curs.execute(sql)
+            result = curs.fetchall()
+
+        except Exception as e:
+            print(e)
+    curs.close()
+    conn.commit()
+    conn.close()
+    return result[0][0]
 
 # def UserDBaccess(userDB_json):
 # 	userID = userDB_json['userID']

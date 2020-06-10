@@ -174,7 +174,7 @@ def GetUserInfo(user_id=None, user_name=None):
     if user_id:
         sql = "SELECT * FROM USER WHERE user_id={}".format(user_id)
     elif user_name:
-        sql = "SELECT * FROM USER WHERE user_name={}".format(user_name)
+        sql = "SELECT * FROM USER WHERE user_name='{}'".format(user_name)
 
     # 	sql = "SELECT * FROM USER"
 
@@ -186,7 +186,7 @@ def GetUserInfo(user_id=None, user_name=None):
         print(e)
 
     user_info = copy.deepcopy(result[0])
-
+    user_id = user_info['user_id']
     tuple_list_of_user_interest = [('USER_TOPIC', 'topic'), ('USER_INTEREST_CELEB', 'celeb'),
                                    ('USER_INTEREST_HOBBY', 'hobby'), ('USER_INTEREST_LOCATION', 'location')]
 

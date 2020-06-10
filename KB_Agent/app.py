@@ -52,7 +52,12 @@ def respond_to_user_utterance():
     if 'session_id' in myjson:
         session_id = myjson['session_id']
 
-    return kb_agent.respond_to_user_utterance(user_id=user_id, user_name=user_name, user_utterance=user_utterance, session_id=session_id)
+    if 'modules' in myjson:
+        modules = myjson['modules']
+    else:
+        modules = []
+
+    return kb_agent.respond_to_user_utterance(user_id=user_id, user_name=user_name, user_utterance=user_utterance, session_id=session_id, modules=modules)
 
 
 if __name__ == "__main__":

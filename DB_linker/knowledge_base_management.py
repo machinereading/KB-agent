@@ -56,3 +56,4 @@ def InsertKnowledgeToUserKB(user_name: str, triple):
             user_name, fname, user_name, fname, user_name, TARGET_DB))
     # os.remove(fname)
     return True
+

@@ -43,7 +43,8 @@ def Entity_Linking(text):
 	'''
 	response = requests.post(targetURL, data=requestJson)
 	#print("[responseCode] " + str(response.status_code))
-
+	if 'entities' not in response.json()[0]:
+		return []
 	entities = response.json()[0]['entities']
 
 	return entities
