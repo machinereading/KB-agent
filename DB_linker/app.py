@@ -1,8 +1,10 @@
 import DB_Linker
 from flask import Flask, request, jsonify
 import json
-
+from flask_cors import CORS
+import ssl
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/DeleteUserListInfo', methods=['POST'])
@@ -10,9 +12,27 @@ def _deleteUserListInfo():
     print('_deleteUserListInfo')
     data = request.data.decode('utf-8')
     myjson = json.loads(data)
-    result = DB_Linker.DeleteUserListInfo(myjson['user_id'], myjson['user_interest_celeb'],
+    result = DB_Linker.DeleteUserListInfo(myjson['user_id'], myjson['user_num'], myjson['user_interest_celeb'],
                                           myjson['user_interest_hobby'], myjson['user_interest_location'],
                                           myjson['user_topic'])
+    return result
+
+
+@app.route('/AddUserInfo', methods=['POST'])
+def _addUserInfo():
+    print('_addUserInfo')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.AddUserInfo(user_num=myjson['user_num'], user_name=myjson['user_name'],
+                                   user_age=myjson['user_age'],
+                                   user_birth=myjson['user_birth'], user_gender=myjson['user_gender'],
+                                   user_current_city=myjson['user_current_city'],
+                                   user_hometown=myjson['user_hometown'], user_professional=myjson['user_professional'],
+                                   user_job_title=myjson['user_job_title'], personality_E=myjson['personality_E'],
+                                   personality_N=myjson['personality_N'], personality_C=myjson['personality_C'],
+                                   personality_A=myjson['personality_A'], personality_O=myjson['personality_O'])
+    print(result)
+
     return result
 
 
@@ -21,8 +41,22 @@ def _addUserListInfo():
     print('_addUserListInfo')
     data = request.data.decode('utf-8')
     myjson = json.loads(data)
-    result = DB_Linker.AddUserListInfo(myjson['user_id'], myjson['user_interest_celeb'], myjson['user_interest_hobby'],
+    result = DB_Linker.AddUserListInfo(myjson['user_id'], myjson['user_num'], myjson['user_interest_celeb'],
+                                       myjson['user_interest_hobby'],
                                        myjson['user_interest_location'], myjson['user_topic'])
+    print(result)
+
+    return result
+
+
+@app.route('/UpdateUserListInfo', methods=['POST'])
+def _updateUserListInfo():
+    print('_updateUserListInfo')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.UpdateUserListInfo(myjson['user_id'], myjson['user_num'], myjson['user_interest_celeb'],
+                                          myjson['user_interest_hobby'],
+                                          myjson['user_interest_location'], myjson['user_topic'])
     print(result)
 
     return result
@@ -33,7 +67,8 @@ def _updateUserInfo():
     print('_updateUserInfo')
     data = request.data.decode('utf-8')
     myjson = json.loads(data)
-    result = DB_Linker.UpdateUserInfo(myjson['user_id'], myjson['user_name'], myjson['user_age'],
+    result = DB_Linker.UpdateUserInfo(myjson['user_id'], myjson['user_num'], myjson['user_name'],
+                                      myjson['user_age'],
                                       myjson['user_birth'], myjson['user_gender'], myjson['user_current_city'],
                                       myjson['user_hometown'], myjson['user_professional'], myjson['user_job_title'])
 
@@ -54,7 +89,41 @@ def _getUserInfo():
     print('_getUserInfo')
     data = request.data.decode('utf-8')
     myjson = json.loads(data)
-    result = DB_Linker.GetUserInfo(user_id=myjson['user_id'], user_name=myjson['user_name'])
+
+    if 'user_id' in myjson:
+        user_id = myjson['user_id']
+    else:
+        user_id = None
+
+    if 'user_name' in myjson:
+        user_name = myjson['user_name']
+    else:
+        user_name = None
+
+    if 'user_num' in myjson:
+        user_num = myjson['user_num']
+    else:
+        user_num = None
+
+    result = DB_Linker.GetUserInfo(user_id=user_id, user_num=user_num, user_name=user_name)
+    return result
+
+
+@app.route('/GetUserInfoFull', methods=['POST', 'GET'])
+def _getUserInfoFull():
+    print('_getUserInfoFull')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetUserInfoFull(user_id=myjson['user_id'], user_num=myjson['user_num'])
+    return result
+
+
+@app.route('/GetUserInfoLight', methods=['POST', 'GET'])
+def _getUserInfoLight():
+    print('_getUserInfoLight')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetUserInfoLight(user_id=myjson['user_id'], user_num=myjson['user_num'])
     return result
 
 
@@ -89,6 +158,64 @@ def _saveUtterance():
     return result
 
 
+@app.route('/AddConvHistory', methods=['POST'])
+def _addConvHistory():
+    print('_addConvHistory')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.AddConvHistory(user_id=myjson['user_id'], user_num=myjson['user_num'], utterance=myjson['utterance'],
+                                     session_id=myjson['session_id'], speaker=myjson['speaker'],
+                                     emotion=myjson['emotion'], intent_req=myjson['intent_req'],
+                                     intent_emp=myjson['intent_emp'])
+    return result
+
+
+@app.route('/GetCurrentUserConv', methods=['POST'])
+def _getCurrentUserConv():
+    print('_getCurrentUserConv')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetCurrentUserConv(user_id=myjson['user_id'], user_num=myjson['user_num'],
+                                     session_id=myjson['session_id'])
+    return result
+
+
+@app.route('/GetConvHistory', methods=['POST'])
+def _getConvHistory():
+    print('_getConvHistory')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetConvHistory(user_id=myjson['user_id'], user_num=myjson['user_num'])
+    return result
+
+
+@app.route('/GetUserConvHistory', methods=['POST'])
+def _getUserConvHistory():
+    print('_getUserConvHistory')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetUserConvHistory(user_id=myjson['user_id'], user_num=myjson['user_num'])
+    return result
+
+
+@app.route('/GetBotConvHistory', methods=['POST'])
+def _getBotConvHistory():
+    print('_getBotConvHistory')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetBotConvHistory(user_id=myjson['user_id'], user_num=myjson['user_num'])
+    return result
+
+
+@app.route('/GetSessionConv', methods=['POST'])
+def _getSessionConv():
+    print('_getSessionConv')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.GetSessionConv(user_id=myjson['user_id'], user_num=myjson['user_num'], session_id=myjson['session_id'])
+    return result
+
+
 @app.route('/LookUpSessionOfUser', methods=['POST'])
 def _lookUpSessionOfUser():
     print('_saveUtterance')
@@ -112,10 +239,22 @@ def _addNewSession():
     print('_addNewSession')
     data = request.data.decode('utf-8')
     myjson = json.loads(data)
-    result = DB_Linker.AddNewSession(user_id=myjson['user_id'], model_id=myjson['model_id'],
+    if 'session_id' in myjson:
+        session_id = myjson['session_id']
+    else:
+        session_id = None
+    result = DB_Linker.AddNewSession(session_id=session_id, user_id=myjson['user_id'], model_id=myjson['model_id'],
                                      mission_id=myjson['mission_id'], feedback=myjson['feedback'])
     return result
 
+
+@app.route('/GetUtteranceWithKnowledgeBySessionID', methods=['POST'])
+def _getUtteranceWithKnowledgeBySessionID():
+    print('_getUtteranceWithKnowledgeBySessionID')
+    data = request.data.decode('utf-8')
+    myjson = json.loads(data)
+    result = DB_Linker.getUtteranceWithKnowledgeBySessionID(myjson['session_id'])
+    return result
 
 # @app.route('/DescribeTable', methods=['POST'])
 # def _describeTable():
@@ -246,4 +385,10 @@ def _insertKnowledgeToUserKB():
 
 
 if __name__ == "__main__":
-    app.run(port=8291, host='143.248.135.146')
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    ssl_context.load_cert_chain(certfile='cert.pem', keyfile='key.pem', password='ybjeong')
+    app.run(
+        port=8291,
+        host='143.248.135.146',
+        ssl_context=ssl_context
+    )

@@ -1,0 +1,1192 @@
+{
+    "PS_NAME": {
+        "type": "Person",
+        "mapped_dbo": [
+            "Person"
+        ],
+        "definition": "인명/인명 별칭"
+    },
+    "PS_MYTH": {
+        "type": "Person",
+        "mapped_dbo": [
+            "MythologicalFigure"
+        ],
+        "definition": "신화속 인물"
+    },
+    "PS_CHARACTER": {
+        "type": "Person",
+        "mapped_dbo": [
+            "FictionalCharacter"
+        ],
+        "definition": "캐릭터 인물"
+    },
+    "PS_SINGER": {
+        "type": "Person",
+        "mapped_dbo": [
+            "Singer"
+        ],
+        "definition": "가수 인물"
+    },
+    "PS_ACTOR": {
+        "type": "Person",
+        "mapped_dbo": [
+            "Actor"
+        ],
+        "definition": "배우 인물"
+    },
+    "PS_DIRECTOR": {
+        "type": "Person",
+        "mapped_dbo": [
+            "MovieDirector",
+            "TelevisionDirector",
+            "TheatreDirector",
+            "MusicDirector"
+        ],
+        "definition": "감독 인물 / 디비피디아에는 장르별로 구분되어 있음"
+    },
+    "FD_SCIENCE": {
+        "type": "Study Field",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "과학관련 학문 분야 및 과학 학파 - 상위 클래스"
+    },
+    "FD_SOCIAL_SCIENCE": {
+        "type": "Study Field",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "사회과학 관련 학문 분야 및 학파  - 상위 클래스"
+    },
+    "FD_MEDICINE": {
+        "type": "Study Field",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "의학관련 학문 분야 및 학파"
+    },
+    "FD_ART": {
+        "type": "Study Field",
+        "mapped_dbo": [
+            "Artwork"
+        ],
+        "definition": "예술관련 학문분야 및 학파/학문 명칭이라기보다 예술의 분류(무용,미술,연극, 영화 등)"
+    },
+    "FD_PHILOSOPHY": {
+        "type": "Study Field",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "철학관련 학문분야 및 학파"
+    },
+    "FD_OTHERS": {
+        "type": "Study Field",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "이외의 학문 분야"
+    },
+    "TR_SCIENCE": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "과학 관련 이론/법칙/방식/작용/현상"
+    },
+    "TR_TECHNOLOGY": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "기계/장치/시스템/기술 관련 이론/법칙/방식  - 상위 클래스"
+    },
+    "TR_SOCIAL_SCIENCE": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "사회과학 이론/법칙/방법  - 상위 클래스"
+    },
+    "TR_ART": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept",
+            "Genre"
+        ],
+        "definition": "예술관련 이론/법칙/방식"
+    },
+    "TR_PHILOSOPHY": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "철학 이론/사상"
+    },
+    "TR_MEDICINE": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "의학 요법/처방, 의학 진단법"
+    },
+    "TR_OTHERS": {
+        "type": "Theory",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": "위의 세부분류 이외의 이론/법칙"
+    },
+    "AF_CULTURAL_ASSET": {
+        "type": "Artifacts",
+        "mapped_dbo": [],
+        "definition": "문화재 명칭--역사적인 건물, 서적, 작품 모두 문화재Monument, HistoricBuilding,  ReligiousBuilding, Museum, Shrine, HistoricPlace"
+    },
+    "AF_BUILDING": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "ArchitecturalStructure"
+        ],
+        "definition": "건축물/토목 건설물/Building도 존재하나 Ari…Str.. 가 dam, 등 더 포괄하는 상위 클래스"
+    },
+    "AF_MUSICAL_INSTRUMENT": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Instrument"
+        ],
+        "definition": "악기 명칭"
+    },
+    "AF_ROAD": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Road"
+        ],
+        "definition": "도로/ 철로 명칭"
+    },
+    "AF_WEAPON": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Weapon"
+        ],
+        "definition": "무기 명칭"
+    },
+    "AF_TRANSPORT": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "MeanOfTransportation"
+        ],
+        "definition": "교통수단/자동차/선박 모델 및 유형"
+    },
+    "AF_WORKS": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Work"
+        ],
+        "definition": "작품명"
+    },
+    "AFW_GEOGRAPHY": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Work"
+        ],
+        "definition": "지리서, 지도"
+    },
+    "AFW_MEDICAL_SCIENCE": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Book"
+        ],
+        "definition": "의학관련 서적  - 상위 클래스"
+    },
+    "AFW_RELIGION": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Book"
+        ],
+        "definition": "종교서적, 각 종교의 경전  - 상위 클래스"
+    },
+    "AFW_PHILOSOPHY": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Book"
+        ],
+        "definition": "철학관련 서적  - 상위 클래스"
+    },
+    "AFW_ART": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Artwork"
+        ],
+        "definition": "예술 작품 / 독립적으로 쓰이지 않는다."
+    },
+    "AFWA_DANCE": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Artwork"
+        ],
+        "definition": "춤/무용 작품명  - 상위 클래스"
+    },
+    "AFWA_MOVIE": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Film"
+        ],
+        "definition": "영화 작품명"
+    },
+    "AFWA_LITERATURE": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "WrittenWork"
+        ],
+        "definition": "시/소설/희곡 등의 문학 작품명  - Book, Comic, Drama, PeriodicalLiterature, Play, Poem를 포괄하는 상위 클래스"
+    },
+    "AFWA_ART_CRAFT": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Artwork"
+        ],
+        "definition": "미술 관련 작품명(그림/미술품) (Painting, Sculpture 포함)"
+    },
+    "AFWA_THEATRICALS": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "Play",
+            "Musical"
+        ],
+        "definition": "연극/공연명"
+    },
+    "AFWA_MUSIC": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "MusicalWork"
+        ],
+        "definition": "음악 작품명 (Opera포함)"
+    },
+    "AFWA_PROGRAM": {
+        "type": "Artifacts",
+        "mapped_dbo": [
+            "TelevisionShow"
+        ],
+        "definition": "TV 프로그램명"
+    },
+    "AF_WARES": {
+        "type": "Artifacts",
+        "mapped_dbo": [],
+        "definition": "상품/제품 이름"
+    },
+    "OGG_ECONOMY": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "경제 기관/단체/경제 회의/회담  - 상위 클래스"
+    },
+    "OGG_EDUCATION": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "EducationalInstitution"
+        ],
+        "definition": "교육/학교 기관/단체"
+    },
+    "OGG_MILITARY": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "군사 기관/단체/군사 회의/회담 / MilitaryUnit은 군대의미 - 상위 클래스"
+    },
+    "OGG_MEDIA": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "미디어 기관/단체 - 상위 클래스"
+    },
+    "OGG_SPORTS": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "SportsLeague"
+        ],
+        "definition": "스포츠 기관/단체"
+    },
+    "OGG_ART": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "공연장/전시장/박물관/미술관/예술 기관/단체- 상위 클래스"
+    },
+    "OGG_SOCIETY": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "사회 기관/단체- 상위 클래스"
+    },
+    "OGG_MEDICINE": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "의학/의료 기관/단체  - 상위 클래스"
+    },
+    "OGG_RELIGION": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Religious"
+        ],
+        "definition": "종교(종파 포함) 기관/단체"
+    },
+    "OGG_SCIENCE": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "과학기술/교통/통신 기관/단체  - 상위 클래스"
+    },
+    "OGG_BUSINESS": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Company"
+        ],
+        "definition": "기업 기관/단체"
+    },
+    "OGG_LIBRARY": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Library"
+        ],
+        "definition": "도서관 기관/단체"
+    },
+    "OGG_LAW": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Legislature"
+        ],
+        "definition": "법률 기관/단체"
+    },
+    "OGG_POLITICS": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "GovernmentAgency",
+            "Parliament",
+            "PoliticalParty",
+            "Organisation"
+        ],
+        "definition": "정치/행정/대사관 기관/단체/정치/행정 회의/회담"
+    },
+    "OGG_GAME": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Group"
+        ],
+        "definition": "게임관련 단체 (길드, 클랜, 파티)  - 상위 클래스"
+    },
+    "OGG_FOOD": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Company"
+        ],
+        "definition": "음식 관련 업체 및 회사 - 상위 클래스"
+    },
+    "OGG_HOTEL": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Company"
+        ],
+        "definition": "호텔 및 숙박 관련 업체 및 회사 - 상위 클래스"
+    },
+    "OG_OTHERS": {
+        "type": "Organization",
+        "mapped_dbo": [
+            "Organisation"
+        ],
+        "definition": "각 세부 범주에 포함되지 못하는 명칭들"
+    },
+    "LC_PLACE": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Place"
+        ],
+        "definition": "지역명/주로 공식적 지역명칭과 행정구역 명칭"
+    },
+    "LCP_COUNTRY": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Country"
+        ],
+        "definition": "국가명"
+    },
+    "LCP_PROVINCE": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Region"
+        ],
+        "definition": "도, 주 지역명"
+    },
+    "LCP_COUNTY": {
+        "type": "Location",
+        "mapped_dbo": [
+            "AdministrativeRegion",
+            "Town",
+            "Village"
+        ],
+        "definition": "군, 면, 읍, 리, 동 등과 같은 세부 행정구역명"
+    },
+    "LCP_CITY": {
+        "type": "Location",
+        "mapped_dbo": [
+            "City"
+        ],
+        "definition": "도시명"
+    },
+    "LCP_CAPITALCITY": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Capital"
+        ],
+        "definition": "수도명"
+    },
+    "LC_GEO_AREA": {
+        "type": "Location",
+        "mapped_dbo": [
+            "NaturalPlace"
+        ],
+        "definition": "국가명이나 행정구역명과는 별개인 산, 강과 같은 자연에 대한 지리명칭"
+    },
+    "LCG_RIVER": {
+        "type": "Location",
+        "mapped_dbo": [
+            "BodyOfWater"
+        ],
+        "definition": "강/호수/육수 이름 (Stream(River), Lake)"
+    },
+    "LCG_OCEAN": {
+        "type": "Location",
+        "mapped_dbo": [
+            "BodyOfWater"
+        ],
+        "definition": "해양/바다 명칭 (Ocean,Sea)"
+    },
+    "LCG_BAY": {
+        "type": "Location",
+        "mapped_dbo": [
+            "NaturalPlace"
+        ],
+        "definition": "반도/만의 명칭  - 상위 클래스"
+    },
+    "LCG_MOUNTAIN": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Mountain",
+            "MountainRange"
+        ],
+        "definition": "산맥/산의 명칭"
+    },
+    "LCG_ISLAND": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Island"
+        ],
+        "definition": "섬/제도 명칭"
+    },
+    "LCG_TOPOGRAPHY": {
+        "type": "Location",
+        "mapped_dbo": [
+            "NaturalPlace"
+        ],
+        "definition": "지형명칭  - 상위 클래스"
+    },
+    "LCG_CONTINENT": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Continent"
+        ],
+        "definition": "대륙 명칭"
+    },
+    "LC_TOUR": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Place"
+        ],
+        "definition": "관광명소 -상위 클래스 놀이공원 등"
+    },
+    "LC_SPACE": {
+        "type": "Location",
+        "mapped_dbo": [
+            "CelestialBody"
+        ],
+        "definition": "천체 명칭/항성, 행성 및 위성/유성 그리고 별자리 명칭"
+    },
+    "LC_GAME": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Place"
+        ],
+        "definition": "게임내에서 쓰이는 장소(맵, 던정 등) - 대분류"
+    },
+    "LC_OTHERS": {
+        "type": "Location",
+        "mapped_dbo": [
+            "Place"
+        ],
+        "definition": ""
+    },
+    "CV_NAME": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "문명/문화 명칭"
+    },
+    "CV_TRIBE": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Person"
+        ],
+        "definition": "민족/종족 명칭 또한 국가를 구성하는 국민  - 상위 클래스"
+    },
+    "CV_SPORTS": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Sport"
+        ],
+        "definition": "스포츠/레포츠/레져 명칭"
+    },
+    "CV_SPORTS_INST": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Device"
+        ],
+        "definition": "스포츠/레포츠/레져의 용품/도구 명칭   - 상위 클래스"
+    },
+    "CV_POLICY": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "SystemOfLaw"
+        ],
+        "definition": "제도/정책 명칭"
+    },
+    "CV_TAX": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Tax"
+        ],
+        "definition": "조세 명칭"
+    },
+    "CV_FUNDS": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "연금, 기금, 자금 명칭"
+    },
+    "CV_LANGUAGE": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Language"
+        ],
+        "definition": "언어 명칭"
+    },
+    "CV_BUILDING_TYPE": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "건축양식 명칭"
+    },
+    "CV_FOOD": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Food"
+        ],
+        "definition": "음식/곡물 명칭"
+    },
+    "CV_DRINK": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Beverage"
+        ],
+        "definition": "음료수 명칭"
+    },
+    "CV_CLOTHING": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "의복/섬유 명칭"
+    },
+    "CV_POSITION": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "직위 명칭"
+    },
+    "CV_RELATION": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Family"
+        ],
+        "definition": "인간 관계 명칭  - 상위 클래스 (DBO:Person- Comment (en): A group of people related by common descent, a lineage)"
+    },
+    "CV_OCCUPATION": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "직업 명칭"
+    },
+    "CV_CURRENCY": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Currency"
+        ],
+        "definition": "통화 명칭"
+    },
+    "CV_PRIZE": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Award"
+        ],
+        "definition": "상과 훈장"
+    },
+    "CV_LAW,": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "SystemOfLaw"
+        ],
+        "definition": "법/법률 명칭"
+    },
+    "CVL_RIGHT": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "법적 권리"
+    },
+    "CVL_CRIME": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "범죄 명칭"
+    },
+    "CV_FOOD_STYLE": {
+        "type": "Civilization",
+        "mapped_dbo": [
+            "Food"
+        ],
+        "definition": "음식 종류"
+    },
+    "CVL_PENALTY": {
+        "type": "Civilization",
+        "mapped_dbo": [],
+        "definition": "형벌 명칭"
+    },
+    "DT_DURATION": {
+        "type": "Date",
+        "mapped_dbo": [
+            "TimePeriod"
+        ],
+        "definition": "기간 / datatype"
+    },
+    "DT_DAY": {
+        "type": "Date",
+        "mapped_dbo": [],
+        "definition": "날짜 - 상위 클래스 datatype"
+    },
+    "DT_MONTH": {
+        "type": "Date",
+        "mapped_dbo": [],
+        "definition": "달 / datatype"
+    },
+    "DT_YEAR": {
+        "type": "Date",
+        "mapped_dbo": [
+            "Year"
+        ],
+        "definition": "년 / datatype"
+    },
+    "DT_SEASON": {
+        "type": "Date",
+        "mapped_dbo": [],
+        "definition": "계절 / season 프로퍼티의 objecttype rdfs:domain SoccerClub 매핑하면 안됨"
+    },
+    "DT_GEOAGE": {
+        "type": "Date",
+        "mapped_dbo": [
+            "GeologicalPeriod"
+        ],
+        "definition": "지질시대"
+    },
+    "DT_DYNASTY": {
+        "type": "Date",
+        "mapped_dbo": [
+            "HistoricalPeriod"
+        ],
+        "definition": "왕조/시대 - 상위 클래스"
+    },
+    "DT_OTHERS": {
+        "type": "Date",
+        "mapped_dbo": [],
+        "definition": "datatype"
+    },
+    "TI_DURATION": {
+        "type": "Time",
+        "mapped_dbo": [],
+        "definition": "기간 / datatype"
+    },
+    "TI_HOUR": {
+        "type": "Time",
+        "mapped_dbo": [],
+        "definition": "시간"
+    },
+    "TI_MINUTE": {
+        "type": "Time",
+        "mapped_dbo": [],
+        "definition": "분"
+    },
+    "TI_SECOND": {
+        "type": "Time",
+        "mapped_dbo": [],
+        "definition": "초"
+    },
+    "TI_OTHERS": {
+        "type": "Time",
+        "mapped_dbo": [],
+        "definition": ""
+    },
+    "QT_AGE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "나이 / datatype"
+    },
+    "QT_SIZE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "크기"
+    },
+    "QT_LENGTH": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "길이/거리/ 높이"
+    },
+    "QT_COUNT": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "개수, 빈도/datatype"
+    },
+    "QT_MAN_COUNT": {
+        "type": "Quantity",
+        "mapped_dbo": [
+            "Population"
+        ],
+        "definition": "인원수"
+    },
+    "QT_WEIGHT": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "무게/ datatype"
+    },
+    "QT_PERCENTAGE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "백분율, 비율, 농도"
+    },
+    "QT_SPEED": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "속도/ datatype"
+    },
+    "QT_TEMPERATURE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "온도/ datatype"
+    },
+    "QT_VOLUME": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "부피/ datatype"
+    },
+    "QT_ORDER": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "순서/순차적 표현"
+    },
+    "QT_PRICE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "금액/priceMondy 프로퍼티의 rdfs:domain dbpedia-owl:SnookerPlayer"
+    },
+    "QT_PHONE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "전화번호"
+    },
+    "QT_SPORTS": {
+        "type": "Quantity",
+        "mapped_dbo": [
+            "SportCompetitionResult"
+        ],
+        "definition": "스포츠 관련 수량 표현"
+    },
+    "QT_CHANNEL": {
+        "type": "Quantity",
+        "mapped_dbo": [
+            "TelevisionStation"
+        ],
+        "definition": "TV 채널 번호"
+    },
+    "QT_ALBUM": {
+        "type": "Quantity",
+        "mapped_dbo": [
+            "Album"
+        ],
+        "definition": "앨범 관련 수량 표현"
+    },
+    "QT_ZIPCODE": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": "우편번호 / datatype"
+    },
+    "QT_OTHERS": {
+        "type": "Quantity",
+        "mapped_dbo": [],
+        "definition": ""
+    },
+    "EV_ACTIVITY": {
+        "type": "Event",
+        "mapped_dbo": [
+            "Event"
+        ],
+        "definition": "사회운동 및 선언"
+    },
+    "EV_WAR_REVOLUTION": {
+        "type": "Event",
+        "mapped_dbo": [
+            "Event"
+        ],
+        "definition": "전쟁/혁명"
+    },
+    "EV_SPORTS": {
+        "type": "Event",
+        "mapped_dbo": [
+            "SportsEvent"
+        ],
+        "definition": "스포츠 관련 행사"
+    },
+    "EV_FESTIVAL": {
+        "type": "Event",
+        "mapped_dbo": [
+            "FilmFestival",
+            "MusicFestival"
+        ],
+        "definition": "축제 명칭"
+    },
+    "EV_GAME": {
+        "type": "Event",
+        "mapped_dbo": [
+            "Event"
+        ],
+        "definition": "게임 관련 이벤트(행사) 이름 - 상위 클래스"
+    },
+    "EV_OTHERS": {
+        "type": "Event",
+        "mapped_dbo": [
+            "Event"
+        ],
+        "definition": ""
+    },
+    "AM_INSECT": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Insect"
+        ],
+        "definition": "곤충"
+    },
+    "AM_BIRD": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Bird"
+        ],
+        "definition": "새(조류) 이름"
+    },
+    "AM_FISH": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Fish"
+        ],
+        "definition": "물고기(어류) 이름"
+    },
+    "AM_MAMMALIA": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Mammal"
+        ],
+        "definition": "포유류"
+    },
+    "AM_AMPHIBIA": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Amphibian"
+        ],
+        "definition": "양서류"
+    },
+    "AM_REPTILIA": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Reptile"
+        ],
+        "definition": "파충류"
+    },
+    "AM_TYPE": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Taxon"
+        ],
+        "definition": "동물 분류 명칭"
+    },
+    "AM_PART": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "AnatomicalStructure"
+        ],
+        "definition": "동물 몸의 한 부분(신체부위) 명칭"
+    },
+    "AM_OTHERS": {
+        "type": "Animal",
+        "mapped_dbo": [
+            "Animal"
+        ],
+        "definition": ""
+    },
+    "PT_FRUIT": {
+        "type": "Plant",
+        "mapped_dbo": [
+            "Plant",
+            "Food"
+        ],
+        "definition": "과일 이름"
+    },
+    "PT_FLOWER": {
+        "type": "Plant",
+        "mapped_dbo": [
+            "FloweringPlant"
+        ],
+        "definition": "꽃 이름"
+    },
+    "PT_TREE": {
+        "type": "Plant",
+        "mapped_dbo": [
+            "Plant"
+        ],
+        "definition": "나무 이름 - 상위 클래스"
+    },
+    "PT_GRASS": {
+        "type": "Plant",
+        "mapped_dbo": [
+            "Plant"
+        ],
+        "definition": "풀 이름 - 상위 클래스"
+    },
+    "PT_TYPE": {
+        "type": "Plant",
+        "mapped_dbo": [
+            "Taxon",
+            "Plant"
+        ],
+        "definition": "식물 유형 명칭"
+    },
+    "PT_PART": {
+        "type": "Plant",
+        "mapped_dbo": [],
+        "definition": "눈으로 확인 가능한 식물의 한 부분에 대한 명칭"
+    },
+    "PT_OTHERS": {
+        "type": "Plant",
+        "mapped_dbo": [
+            "Plant"
+        ],
+        "definition": ""
+    },
+    "MT_ELEMENT": {
+        "type": "Material",
+        "mapped_dbo": [
+            "ChemicalElement"
+        ],
+        "definition": "원소명"
+    },
+    "MT_METAL": {
+        "type": "Material",
+        "mapped_dbo": [
+            "ChemicalSubstance"
+        ],
+        "definition": "금속물"
+    },
+    "MT_ROCK": {
+        "type": "Material",
+        "mapped_dbo": [],
+        "definition": "암석 명칭"
+    },
+    "MT_CHEMICAL": {
+        "type": "Material",
+        "mapped_dbo": [
+            "ChemicalSubstance"
+        ],
+        "definition": "화학물질/단백질/생화학물질/효소/호르몬/바이러스"
+    },
+    "MTC_LIQUID": {
+        "type": "Material",
+        "mapped_dbo": [
+            "ChemicalSubstance"
+        ],
+        "definition": "액체 화학물질"
+    },
+    "MTC_GAS": {
+        "type": "Material",
+        "mapped_dbo": [
+            "ChemicalSubstance"
+        ],
+        "definition": "기체 화학물질"
+    },
+    "TM_COLOR": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Colour"
+        ],
+        "definition": "색"
+    },
+    "TM_DIRECTION": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "방향"
+    },
+    "TM_CLIMATE": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "기후지역 명칭 / objecttype rdfs:domain dbpedia/owl:Place"
+    },
+    "TM_SHAPE": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "모양, 형태 명칭"
+    },
+    "TM_CELL_TISSUE": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "세포/조직, 세포 명칭과 생물의 조직 및 기관에 대한 명칭, 눈으로 외부적으로 보이지 않는 신체 및 식물의 조직 및 기관 명칭"
+    },
+    "TM_MEDICINE": {
+        "type": "Term",
+        "mapped_dbo": [
+            "TopicalConcept"
+        ],
+        "definition": ""
+    },
+    "TMM_DISEASE": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Disease"
+        ],
+        "definition": "증상/증세/질병"
+    },
+    "TMM_DRUG": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Drug"
+        ],
+        "definition": "약/약품명"
+    },
+    "TMI_HW": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "하드웨어 용어"
+    },
+    "TMI_SW": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Software"
+        ],
+        "definition": "소프트웨어 용어"
+    },
+    "TMI_SITE": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Website"
+        ],
+        "definition": "url 주소"
+    },
+    "TMI_EMAIL": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "이메일 주소"
+    },
+    "TMI_MODEL": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "각종 제품 등의 모델명, 제품의 부품류 - 상위 클래스"
+    },
+    "TMI_SERVICE": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "IT 서비스 용어"
+    },
+    "TMI_PROJECT": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Project"
+        ],
+        "definition": "IT 프로젝트 용어"
+    },
+    "TM_IT_GAME": {
+        "type": "Term",
+        "mapped_dbo": [
+            "VideoGame"
+        ],
+        "definition": "게임 관련 용어"
+    },
+    "TMIG_HW": {
+        "type": "Term",
+        "mapped_dbo": [
+            "VideoGame"
+        ],
+        "definition": "게임 관련 하드웨어 용어"
+    },
+    "TMIG_SW": {
+        "type": "Term",
+        "mapped_dbo": [
+            "VideoGame"
+        ],
+        "definition": "게임 소프트웨어"
+    },
+    "TMIG_GENRE": {
+        "type": "Term",
+        "mapped_dbo": [
+            "VideoGame"
+        ],
+        "definition": "게임 장르"
+    },
+    "TMIG_UNIT": {
+        "type": "Term",
+        "mapped_dbo": [
+            "FictionalCharacter"
+        ],
+        "definition": "게임 내의 유닛 이름 (캐릭터종족, 유닛, 몬스터, NPC)"
+    },
+    "TMIG_ITEM": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "게임 내의 아이템 이름 (게임무기, 방어구, 액세서리, 보물 등)"
+    },
+    "TMIG_SKILL": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "게임 내의 스킬 이름"
+    },
+    "TMIG_QUEST": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "게임 내의 퀘스트 이름"
+    },
+    "TMIG_LEVEL": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "게임 내의 레벨"
+    },
+    "TMIG_SERVER": {
+        "type": "Term",
+        "mapped_dbo": [],
+        "definition": "게임 서버 이름"
+    },
+    "TM_SPORTS": {
+        "type": "Term",
+        "mapped_dbo": [
+            "Sport"
+        ],
+        "definition": "스포츠/레저 용어 (기술, 규칙 이름 등)"
+    }
+}

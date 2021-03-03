@@ -9,27 +9,20 @@ import os
 from user_management import *
 from knowledge_base_management import *
 from dialog_management import *
+import constant
 
-dialogDBHost = '143.248.135.146'
-dialogDBPort = 3142
-dialogDBUserName = 'flagship'
-dialogDBPassword = 'kbagent'
-dialogDBDatabase = 'dialogDB'
-dialogDBCharset = 'utf8'
+dialogDBHost = constant.dialogDBHost
+dialogDBPort = constant.dialogDBPort
+dialogDBUserName = constant.dialogDBUserName
+dialogDBPassword = constant.dialogDBPassword
+dialogDBDatabase = constant.dialogDBDatabase
+dialogDBCharset = constant.dialogDBCharset
 
-HOME_DIRECTORY = "/root/flagship/"
-DOCKER_EXEC_PREFIX = "docker exec stardog_"
+HOME_DIRECTORY = constant.HOME_DIRECTORY
+DOCKER_EXEC_PREFIX = constant.DOCKER_EXEC_PREFIX
 
-TARGET_DB = "userDB"
-headers = {
-    'Content-Type': 'application/x-www-form-urlencoded, application/sparql-query, text/turtle',
-    'Accept': 'text/turtle, application/rdf+xml, application/n-triples, application/trig, application/n-quads, '
-              'text/n3, application/trix, application/ld+json, '  # application/sparql-results+xml, '
-              'application/sparql-results+json, application/x-binary-rdf-results-table, text/boolean, text/csv, '
-              'text/tsv, text/tab-separated-values '
-}
-
-
+TARGET_DB = constant.TARGET_DB
+headers = constant.headers
 
 def query(query):
     conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
@@ -118,6 +111,53 @@ def query(query):
 # 	conn.close()
 
 
+def getUtteranceWithKnowledgeBySessionID(session_id):
+    conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
+                           db=dialogDBDatabase,
+                           charset=dialogDBCharset)
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+    sql = "select u.utterance_id, u.utterance, u.speaker, u.turn_id, u.query_id, u.intent_req, u.session_id, l.subject, l.property, l.object, l.userKB_log_id, l.kv_module_score from UTTERANCE u left outer join USERKB_LOG l on u.utterance_id=l.utterance_id where u.session_id={}".format(session_id)
+
+    try:
+        curs.execute(sql)
+        result = curs.fetchall()
+
+    except Exception as e:
+        print(e)
+    curs.close()
+    conn.close()
+    if len(result) > 0:
+        answer = {'utterances': result}
+    else:
+        answer = None
+    print(answer)
+    return answer
+
+
+def getEntityListWithUserID(user_id=None):
+    conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
+                           db=dialogDBDatabase,
+                           charset=dialogDBCharset)
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+    sql = "SELECT e.text, e.entity_uri, e.entity_ne_type, e.score, e.confidence FROM USER u, SESSION s, UTTERANCE d, UTTERANCE_ENTITY e WHERE u.user_id={} and s.user_id=u.user_id and s.session_id=d.session_id and d.utterance_id=e.utterance_id".format(user_id)
+
+    try:
+        curs.execute(sql)
+        result = curs.fetchall()
+
+    except Exception as e:
+        print(e)
+    curs.close()
+    conn.close()
+    if len(result) > 0:
+        answer = result
+    else:
+        answer = None
+    return answer
+
+
 def getFrameQuestionByUtteranceID(utterance_id):
     conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
                            db=dialogDBDatabase,
@@ -125,6 +165,29 @@ def getFrameQuestionByUtteranceID(utterance_id):
     curs = conn.cursor(pymysql.cursors.DictCursor)
 
     sql = "SELECT * FROM FRAME_QUESTION WHERE utterance_id={}".format(utterance_id)
+
+    try:
+        curs.execute(sql)
+        result = curs.fetchall()
+
+    except Exception as e:
+        print(e)
+    curs.close()
+    conn.close()
+    if len(result) > 0:
+        answer = result[0]
+    else:
+        answer = None
+    return answer
+
+
+def getFrameLogWithFrameLogID(frame_log_id):
+    conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
+                           db=dialogDBDatabase,
+                           charset=dialogDBCharset)
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+    sql = "SELECT * FROM FRAME_LOG WHERE frame_log_id={}".format(frame_log_id)
 
     try:
         curs.execute(sql)
@@ -156,7 +219,7 @@ def InsertDataToTable(table_name, data_list):
             if str(type(item[1])) == "<class 'str'>":
                 text = item[1].replace("'", "''")
                 values = values + ",'" + text + "'"
-            elif str(type(item[1])) == "<class 'int'>":
+            elif str(type(item[1])) == "<class 'int'>" or str(type(item[1])) == "<class 'float'>":
                 values = values + "," + str(item[1])
             else:
                 values = values + "," + item[1]
@@ -182,6 +245,48 @@ def InsertDataToTable(table_name, data_list):
     conn.commit()
     conn.close()
     return result[0][0]
+
+
+def save_entity_info(entities, utterance_id):
+    print(entities)
+    for entity in entities:
+        datalist = []
+        datadict = {
+            'utterance_id': utterance_id,
+            'text': entity['text'],
+            'entity_uri': entity['uri'],
+            'entity_ne_type': entity['ne_type'],
+            'score': entity['score'],
+            'confidence': entity['confidence'],
+            'start_offset': entity['start_offset'],
+            'end_offset': entity['end_offset']
+        }
+        datalist.append(datadict)
+    last_entity_id = InsertDataToTable('UTTERANCE_ENTITY', datalist)
+
+
+def get_count_of_knowledge_in_session(session_id):
+    conn = pymysql.connect(host=dialogDBHost, port=dialogDBPort, user=dialogDBUserName, passwd=dialogDBPassword,
+                           db=dialogDBDatabase,
+                           charset=dialogDBCharset)
+    curs = conn.cursor(pymysql.cursors.DictCursor)
+
+    sql = "SELECT count(*) FROM UTTERANCE WHERE session_id={} and intent_req='entity_answer'".format(session_id)
+
+    try:
+        curs.execute(sql)
+        result = curs.fetchall()
+
+    except Exception as e:
+        print(e)
+    print('get_count_of: ',result)
+    curs.close()
+    conn.close()
+    if len(result) > 0:
+        answer = result[0]
+    else:
+        answer = None
+    return answer
 
 # def UserDBaccess(userDB_json):
 # 	userID = userDB_json['userID']

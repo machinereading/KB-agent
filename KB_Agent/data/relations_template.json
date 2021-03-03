@@ -1,0 +1,466 @@
+{
+	"hometown": {
+		"template": "<SUB>의 고향은 <OBJ>이다.",
+		"ko_relation": "고향"
+	},
+	"routeEnd": {
+		"template": "<SUB>의 종점은 <OBJ>이다.",
+		"ko_relation": "종점"
+	},
+	"regionServed": {
+		"template": "<SUB>는 <OBJ> 지역에 서비스하고 있다.",
+		"ko_relation": "서비스지역/활동지역"
+	},
+	"formerBandMember": {
+		"template": "<SUB>의 전 멤버로는 <OBJ>이 있다.",
+		"ko_relation": "밴드전멤버"
+	},
+	"ground": {
+		"template": "<SUB>의 구장은 <OBJ>이다.",
+		"ko_relation": "구장"
+	},
+	"director": {
+		"template": "<SUB>은 <OBJ>이 감독을 맡았다.",
+		"ko_relation": "감독"
+	},
+	"dynasty": {
+		"template": "<SUB>은 <OBJ> 왕이다.",
+		"ko_relation": "왕조"
+	},
+	"influencedBy": {
+		"template": "<SUB>은 <OBJ>의 영향을 받았다.",
+		"ko_relation": "영향받은"
+	},
+	"homeStadium": {
+		"template": "<SUB>의 홈구장은 <OBJ>다.",
+		"ko_relation": "홈구장"
+	},
+	"result": {
+		"template": "<SUB>은 <OBJ>이란 결과로 끝났다.",
+		"ko_relation": "결과"
+	},
+	"notableWork": {
+		"template": "<SUB>의 대표적인 작품으로는 <OBJ>이 있다.",
+		"ko_relation": "유명한작품"
+	},
+	"position": {
+		"template": "<SUB>은 <OBJ> 소속이다.",
+		"ko_relation": "직함/포지션"
+	},
+	"servingRailwayLine": {
+		"template": "<SUB>는 <OBJ>을 제공한다.",
+		"ko_relation": "노선"
+	},
+	"channel": {
+		"template": "<SUB>은 <OBJ>에서 방영한다.",
+		"ko_relation": "채널"
+	},
+	"isPartOf": {
+		"template": "<SUB>는 <OBJ>에 속한다.",
+		"ko_relation": "~의부분"
+	},
+	"largestCity": {
+		"template": "<SUB>에서 가장 큰 도시는 <OBJ>다.",
+		"ko_relation": "가장큰도시"
+	},
+	"birthPlace": {
+		"template": "<SUB>은 <OBJ>에서 태어났다.",
+		"ko_relation": "출생지"
+	},
+	"locationCity": {
+		"template": "<SUB>은 <OBJ>에 있다.",
+		"ko_relation": "도시"
+	},
+	"place": {
+		"template": "<SUB>이 일어난 장소는 <OBJ>다.",
+		"ko_relation": "장소"
+	},
+	"restingPlace": {
+		"template": "<SUB>는 <OBJ>에 안식되었다.",
+		"ko_relation": "안식처"
+	},
+	"recordLabel": {
+		"template": "<SUB>은 <OBJ>에 소속되어 있다.",
+		"ko_relation": "소속사"
+	},
+	"producer": {
+		"template": "<SUB>은 <OBJ>이 연출을 맡았다.",
+		"ko_relation": "연출/프로듀서"
+	},
+	"currentMember": {
+		"template": "<SUB>의 현재 멤버로는 <OBJ>이 있다.",
+		"ko_relation": "현멤버"
+	},
+	"locatedInArea": {
+		"template": "<SUB>은 <OBJ>에 위치한다.",
+		"ko_relation": "있는곳"
+	},
+	"residence": {
+		"template": "<SUB>는 <OBJ>에 거주한다.",
+		"ko_relation": "거주지"
+	},
+	"primeMinister": {
+		"template": "<SUB> 내각의 총리는 <OBJ> 씨가 맡고 있다.",
+		"ko_relation": "총리"
+	},
+	"leader": {
+		"template": "<SUB>의 지도자는 <OBJ>이다.",
+		"ko_relation": "지도자"
+	},
+	"foundedBy": {
+		"template": "<SUB>은 <OBJ>에 의해 설립되었다.",
+		"ko_relation": "설립되다"
+	},
+	"division": {
+		"template": "<SUB>는 <OBJ>문에 속한다.",
+		"ko_relation": "문_생물분류단계"
+	},
+	"owningOrganisation": {
+		"template": "<SUB>은 <OBJ>가 소유하고 있다.",
+		"ko_relation": "소유조직"
+	},
+	"party": {
+		"template": "<SUB>가 있는 정당은 <OBJ>이다.",
+		"ko_relation": "정당"
+	},
+	"region": {
+		"template": "<SUB>는 <OBJ>의 지역이다.",
+		"ko_relation": "지역/분양"
+	},
+	"related": {
+		"template": "<SUB>는 <OBJ>와 관련있다.",
+		"ko_relation": "관련되"
+	},
+	"successor": {
+		"template": "<SUB> 대통령의 뒤는 <OBJ> 대통령이 이어갔다.",
+		"ko_relation": "계승자/후임"
+	},
+	"commander": {
+		"template": "<OBJ> 장군은 <SUB>에 참전한 지휘관이다.",
+		"ko_relation": "지휘관"
+	},
+	"title": {
+		"template": "위키피디아의 <SUB> 페이지에는 <OBJ> 단락이 있다.",
+		"ko_relation": "단락제목"
+	},
+	"developer": {
+		"template": "<SUB>는 <OBJ>에서 개발하였다.",
+		"ko_relation": "개발자/개발사"
+	},
+	"relative": {
+		"template": "<SUB>과 <OBJ>는 친척관계다.",
+		"ko_relation": "친척"
+	},
+	"era": {
+		"template": "<SUB> <OBJ> 사람이다.",
+		"ko_relation": "시대"
+	},
+	"club": {
+		"template": "<SUB>는 <OBJ> 구단 소속이다.",
+		"ko_relation": "클럽/구단"
+	},
+	"vicePresident": {
+		"template": "<SUB> 내각에서 국무총리는 <OBJ>였다.",
+		"ko_relation": "부통령/국무총리"
+	},
+	"education": {
+		"template": "<SUB>은 <OBJ> 출신이다.",
+		"ko_relation": "학력"
+	},
+	"owner": {
+		"template": "<SUB>의 소유자는 <OBJ>다.",
+		"ko_relation": "소유자/주주"
+	},
+	"tenant": {
+		"template": "<SUB>은 <OBJ>가 사용하고 있다.",
+		"ko_relation": "입주자/보유자"
+	},
+	"foundationPlace": {
+		"template": "<SUB>은 <OBJ>에서 설립되었다.",
+		"ko_relation": "설립된장소"
+	},
+	"manufacturer": {
+		"template": "<SUB>은 <OBJ>에서 만들었다.",
+		"ko_relation": "제조자"
+	},
+	"parentCompany": {
+		"template": "<SUB>의 <OBJ> 아래에 있다.",
+		"ko_relation": "모기업"
+	},
+	"part": {
+		"template": "<SUB>의 안에 <OBJ>가 있다.",
+		"ko_relation": "부분"
+	},
+	"order": {
+		"template": "<SUB>는 <OBJ>라는 목에 속한다.",
+		"ko_relation": "목_생물분류단계"
+	},
+	"operator": {
+		"template": "<SUB>은 <OBJ>가 운영하고 있다.",
+		"ko_relation": "운영"
+	},
+	"leaderName": {
+		"template": "<SUB>은 이끈 사람은 <OBJ>이다.",
+		"ko_relation": "리더이름"
+	},
+	"publisher": {
+		"template": "<SUB>의 배급사는 <OBJ>다.",
+		"ko_relation": "배급"
+	},
+	"routeStart": {
+		"template": "<SUB>는 <OBJ>부터 시작된다.",
+		"ko_relation": "노선시작"
+	},
+	"address": {
+		"template": "<SUB>의 주소는 <OBJ>다.",
+		"ko_relation": "주소"
+	},
+	"previousWork": {
+		"template": "<SUB>의 전작은 <OBJ>이다.",
+		"ko_relation": "이전작품"
+	},
+	"father": {
+		"template": "<SUB>의 아버지는 <OBJ>이다.",
+		"ko_relation": "아버지"
+	},
+	"product": {
+		"template": "<SUB>의 제품으로 <OBJ>가 있다.",
+		"ko_relation": "제품"
+	},
+	"type": {
+		"template": "<SUB>는 <OBJ>이다.",
+		"ko_relation": "타입/종류"
+	},
+	"team": {
+		"template": "<SUB>의 팀은 <OBJ>다.",
+		"ko_relation": "팀"
+	},
+	"associatedAct": {
+		"template": "<SUB>과 관련된 활동은 <OBJ>가 있다.",
+		"ko_relation": "관련활동"
+	},
+	"affiliation": {
+		"template": "<SUB>는 <OBJ> 소속이다.",
+		"ko_relation": "기원/소속"
+	},
+	"associatedMusicalArtist": {
+		"template": "<SUB>와 관련있는 음악가로 <OBJ>가 있다.",
+		"ko_relation": "관련음악가"
+	},
+	"officialLanguage": {
+		"template": "<SUB>의 공용어는 <OBJ>다.",
+		"ko_relation": "공식언어/공용어"
+	},
+	"capital": {
+		"template": "<SUB>의 수도는 <OBJ>다.",
+		"ko_relation": "수도"
+	},
+	"debutTeam": {
+		"template": "<SUB>은 <OBJ>에서 데뷔하였다.",
+		"ko_relation": "데뷔팀"
+	},
+	"artist": {
+		"template": "<SUB>은 <OBJ>의 작품이다.",
+		"ko_relation": "예술가"
+	},
+	"spouse": {
+		"template": "<SUB>의 배우자는 <OBJ>다.",
+		"ko_relation": "배우자"
+	},
+	"religion": {
+		"template": "<SUB>의 종교는 <OBJ>다.",
+		"ko_relation": "종교"
+	},
+	"league": {
+		"template": "<SUB>가 속한 리그는 <OBJ>다.",
+		"ko_relation": "리그"
+	},
+	"currentTeam": {
+		"template": "<SUB>의 현재 소속팀은 <OBJ>이다.",
+		"ko_relation": "현재팀"
+	},
+	"language": {
+		"template": "<SUB>의 언어는 <OBJ>다.",
+		"ko_relation": "언어"
+	},
+	"locationCountry": {
+		"template": "<SUB>는 <OBJ>에 있다.",
+		"ko_relation": "위치한나라"
+	},
+	"mother": {
+		"template": "<SUB>의 어머니는 <OBJ>다.",
+		"ko_relation": "어머니"
+	},
+	"battle": {
+		"template": "<SUB>은 <OBJ>에 참여하였다.",
+		"ko_relation": "전투"
+	},
+	"city": {
+		"template": "<SUB>가 있는 도시는 <OBJ>다.",
+		"ko_relation": "도시"
+	},
+	"parent": {
+		"template": "<OBJ>은 <SUB>의 부모다.",
+		"ko_relation": "부모"
+	},
+	"stateOfOrigin": {
+		"template": "<SUB>은 <OBJ>이다.",
+		"ko_relation": "국적"
+	},
+	"predecessor": {
+		"template": "<SUB> 대통령의 전임자는 <OBJ> 대통령이다.",
+		"ko_relation": "전임자"
+	},
+	"activeYearsStartYear": {
+		"template": "<SUB>는 <OBJ>년부터 활동을 시작했다.",
+		"ko_relation": "활동시작해"
+	},
+	"associatedBand": {
+		"template": "<OBJ>는 <SUB>과 관련있는 밴드다.",
+		"ko_relation": "관련밴드"
+	},
+	"starring": {
+		"template": "<OBJ>은 <SUB>의 주연 중 하나다.",
+		"ko_relation": "주연"
+	},
+	"writer": {
+		"template": "<SUB>의 작가는 <OBJ>다.",
+		"ko_relation": "작가"
+	},
+	"nationality": {
+		"template": "<SUB>은 <OBJ> 국적이다.",
+		"ko_relation": "국적"
+	},
+	"headquarter": {
+		"template": "<SUB>의 본사는 <OBJ>에 있다.",
+		"ko_relation": "본부/본사"
+	},
+	"family": {
+		"template": "<SUB>는 <OBJ>에 속한다.",
+		"ko_relation": "과_생물분류단계"
+	},
+	"president": {
+		"template": "<SUB>의 총장은 <OBJ>다.",
+		"ko_relation": "대통령/회장"
+	},
+	"ethnicGroup": {
+		"template": "<OBJ>은 <SUB>에 있는 민족 중 하나다.",
+		"ko_relation": "민족"
+	},
+	"location": {
+		"template": "<SUB>은 <OBJ>에 있다.",
+		"ko_relation": "위치/지역"
+	},
+	"phylum": {
+		"template": "<SUB>는 <OBJ>에 속한다.",
+		"ko_relation": "문_생물분류단계"
+	},
+	"state": {
+		"template": "<SUB>은 <OBJ>에 있다.",
+		"ko_relation": "주"
+	},
+	"subsidiary": {
+		"template": "<OBJ>은 <SUB>의 자회사이다.",
+		"ko_relation": "자회사"
+	},
+	"languageFamily": {
+		"template": "<SUB>는 <OBJ>의 한 계통이다.",
+		"ko_relation": "계통"
+	},
+	"bandMember": {
+		"template": "<OBJ>은 <SUB>의 멤버다.",
+		"ko_relation": "밴드멤버"
+	},
+	"operatedBy": {
+		"template": "<SUB>는 <OBJ>에 의해 운영된다.",
+		"ko_relation": "운영되다"
+	},
+	"author": {
+		"template": "<SUB>의 저자는 <OBJ>다.",
+		"ko_relation": "저자"
+	},
+	"managerClub": {
+		"template": "<OBJ>은 <SUB>가 맡았던 클럽이다.",
+		"ko_relation": "맡았던클럽"
+	},
+	"occupation": {
+		"template": "<SUB>의 직업은 <OBJ>다.",
+		"ko_relation": "직업"
+	},
+	"subsequentWork": {
+		"template": "<SUB>의 후속작은 <OBJ>이다.",
+		"ko_relation": "후속작"
+	},
+	"knownFor": {
+		"template": "<SUB>은 <OBJ>으로 유명해졌다.",
+		"ko_relation": "~로알려진"
+	},
+	"combatant": {
+		"template": "<SUB>에는 <OBJ>이 참여하였다.",
+		"ko_relation": "전투원"
+	},
+	"populationPlace": {
+		"template": "<SUB>은 <OBJ>에도 있다.",
+		"ko_relation": "있는곳"
+	},
+	"influenced": {
+		"template": "<SUB>는 <OBJ>에게 영향받았다.",
+		"ko_relation": "영향받은"
+	},
+	"administrativeDistrict": {
+		"template": "<SUB>의 행정구역상 <OBJ>에 속한다.",
+		"ko_relation": "행정구역"
+	},
+	"opponent": {
+		"template": "<SUB>과 <OBJ>는 적이다.",
+		"ko_relation": "적"
+	},
+	"spokenIn": {
+		"template": "<SUB>는 <OBJ>에서 사용된다.",
+		"ko_relation": "쓰이는곳"
+	},
+	"country": {
+		"template": "<SUB>의 국가는 <OBJ>이다.",
+		"ko_relation": "국가"
+	},
+	"deathPlace": {
+		"template": "<SUB>은 <OBJ>에서 사망했다.",
+		"ko_relation": "사망지"
+	},
+	"isPartOfMilitaryConflict": {
+		"template": "<SUB>은 <OBJ>을 이루는 한 전쟁이다.",
+		"ko_relation": "전쟁의부분"
+	},
+	"genre": {
+		"template": "<SUB>의 장르는 <OBJ>이다.",
+		"ko_relation": "장르"
+	},
+	"child": {
+		"template": "<OBJ>는 <SUB>의 자식이다.",
+		"ko_relation": "자식"
+	},
+	"keyPerson": {
+		"template": "<SUB>의 중요인물로 <OBJ>이 있다.",
+		"ko_relation": "주요인물"
+	},
+	"parentOrganisation": {
+		"template": "<SUB>의 상위조직은 <OBJ>다.",
+		"ko_relation": "부모/상위조직"
+	},
+	"instrument": {
+		"template": "<SUB>는 <OBJ>를 다룰줄 안다.",
+		"ko_relation": "악기"
+	},
+	"mainInterest": {
+		"template": "<SUB>는 <OBJ>에 관심이 많았다.",
+		"ko_relation": "관심사"
+	},
+	"award": {
+		"template": "<SUB>는 <OBJ>을 수상했다.",
+		"ko_relation": "수상"
+	},
+	"industry": {
+		"template": "<SUB>은 <OBJ> 기업이다.",
+		"ko_relation": "산업"
+	}
+}

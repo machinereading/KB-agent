@@ -1,0 +1,332 @@
+{
+	"Thing": {
+		"occupation": {
+			"Knowledge_Question": [
+				"<SUB>의 직업은 무엇인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 직업은 <OBJ>예요."
+			]
+		},
+		"genre": {
+			"Knowledge_Question": [
+				"<SUB>는 무슨 장르에 속하나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 장르는 <OBJ>이에요."
+			]
+		},
+		"recordLabel": {
+			"Knowledge_Question": [
+				"<SUB>의 소속사는 어디인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에 있어요."
+			]
+		},
+		"owningOrganisation": {
+			"Knowledge_Question": [
+				"<SUB>는 무슨 단체를 소유했나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>를 가지고 있어요."
+			]
+		},
+		"country": {
+			"Knowledge_Question": [
+				"<SUB>은 어느 나라에 있는 곳인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에 있어요."
+			]
+		},
+		"isPartOf": {
+			"Knowledge_Question": [
+				"<SUB>는 어디에 포함되나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에 들어가요."
+			]
+		},
+		"populationTotal": {
+			"Knowledge_Question": [
+				"<SUB>의 전체 인구는 얼마나 되나요?"
+			],
+			"Knowledge_Inform": [
+				"<OBJ>명의 사람들이 <SUB>에 살고 있어요."
+			]
+		},
+		"area": {
+			"Knowledge_Question": [
+				"<SUB>의 면적은 몇 제곱미터인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 면적은 <OBJ>제곱미터입니다."
+			]
+		},
+		"foundingDate": {
+			"Knowledge_Question": [
+				"<SUB>은 언제 창립되었나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>은 <OBJ>에 창립되었어요."
+			]
+		},
+		"motto": {
+			"Knowledge_Question": [
+				"<SUB>의 모토가 무엇인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 모토는 '<OBJ>'이에요."
+			]
+		},
+		"location": {
+			"Knowledge_Question": [
+				"<SUB>는 어느 지역에 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에 있어요."
+			]
+		},
+		"mascot": {
+			"Knowledge_Question": [
+				"<SUB>의 마스코트는 무엇인가요?"
+			],
+			"Knowledge_Inform": [
+				"<OBJ>는 <SUB>의 마스코트입니다."
+			]
+		}
+	},
+	"Agent": {
+		"nationality": {
+			"Knowledge_Question": [
+				"<SUB>의 국적은 무엇인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>은 <OBJ>의 국적을 가지고 있어요."
+			]
+		},
+		"height": {
+			"Knowledge_Question": [
+				"<SUB>는 키가 어떻게 되나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 키는 <OBJ>cm 이에요."
+			]
+		}
+	},
+	"Place": {
+		"address": {
+			"Knowledge_Question": [
+				"<SUB>는 어디에 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에 있어요."
+			]
+		},
+		"region": {
+			"Knowledge_Question": [
+				"<SUB>는 어느 지역에 들어가나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ> 안에 있습니다."
+			]
+		},
+		"timeZone": {
+			"Knowledge_Question": [
+				"<SUB>의 시간대를 알려주세요."
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 시간대는 <OBJ>이에요."
+			]
+		},
+		"areaTotal": {
+			"Knowledge_Question": [
+				"<SUB>의 총면적은 몇 제곱미터인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 총면적은 <OBJ>제곱미터입니다."
+			]
+		}
+	},
+	"Person": {
+		"birthPlace": {
+			"Knowledge_Question": [
+				"<SUB>는 어디에서 태어났나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에서 태어났어요."
+			]
+		},
+		"activeYearsStartYear": {
+			"Knowledge_Question": [
+				"<SUB>은 언제 데뷔했나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>은 <OBJ>년부터 활동을 시작했습니다."
+			]
+		},
+		"activeYearsEndYear": {
+			"Knowledge_Question": [
+				"<SUB>은 언제 활동을 그만두었나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>은 <OBJ>년에 그동안의 활동을 마무리 지었습니다."
+			]
+		},
+		"birthDate": {
+			"Knowledge_Question": [
+				"<SUB>은 언제 태어났나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 생일은 <OBJ>에요."
+			]
+		},
+		"team": {
+			"Knowledge_Question": [
+				"<SUB>는 어느 팀에서 뛰고 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ> 소속입니다."
+			]
+		},
+		"birthYear": {
+			"Knowledge_Question": [
+				"<SUB>는 몇년도에 태어났나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>년에 태어났어요."
+			]
+		},
+		"spouse": {
+			"Knowledge_Question": [
+				"<SUB>의 배우자는 누구인가요?"
+			],
+			"Knowledge_Inform": [
+				"<OBJ>는 <SUB>의 배우자예요."
+			]
+		}
+	},
+	"Organisation": {
+		"formationYear": {
+			"Knowledge_Question": [
+				"<SUB>은 몇년도에 설립되었나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 설립년도는 <OBJ>년이에요."
+			]
+		},
+		"president": {
+			"Knowledge_Question": [
+				"<SUB>의 총장은 누구인가요?"
+			],
+			"Knowledge_Inform": [
+				"<OBJ>이 <SUB>의 총장이에요."
+			]
+		}
+	},
+	"PopulatedPlace": {
+		"PopulatedPlace/areaTotal": {
+			"Knowledge_Question": [
+				"<SUB>의 면적은 몇 제곱킬로미터인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 면적은 <OBJ>제곱킬로미터입니다."
+			]
+		},
+		"populationYear": {
+			"Knowledge_Question": [
+				"<SUB>는 언제 인구조사를 했나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>년에 인구조사를 했어요."
+			]
+		}
+	},
+	"Artist": {
+		"instrument": {
+			"Knowledge_Question": [
+				"<SUB>는 무슨 악기를 할 줄 아나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>를 연주할 수 있어요."
+			]
+		}
+	},
+	"EducationalInstitution": {
+		"numberOfStudents": {
+			"Knowledge_Question": [
+				"<SUB>에는 학생이 몇명이나 다니나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>에는 학생이 <OBJ>명 있어요."
+			]
+		},
+		"staff": {
+			"Knowledge_Question": [
+				"<SUB>에는 몇명의 교직원이 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>에는 <OBJ>명의 교직원이 있어요."
+			]
+		},
+		"numberOfPostgraduateStudents": {
+			"Knowledge_Question": [
+				"<SUB>에는 대학원생이 얼마나 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>에는 <OBJ>명의 대학원생이 있어요."
+			]
+		},
+		"numberOfUndergraduateStudents": {
+			"Knowledge_Question": [
+				"<SUB>의 학부생은 몇명인가요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>에는 <OBJ>명의 학부생이 다니고 있어요."
+			]
+		}
+	},
+	"Settlement": {
+		"administrativeDistrict": {
+			"Knowledge_Question": [
+				"<SUB>은 무슨 행정구역에 속하나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 행정구역으로 <OBJ>에 들어갑니다."
+			]
+		}
+	},
+	"MusicalArtist": {},
+	"Actor": {},
+	"University": {
+		"city": {
+			"Knowledge_Question": [
+				"<SUB>는 어느 도시에 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>는 <OBJ>에 있어요."
+			]
+		},
+		"campus": {
+			"Knowledge_Question": [
+				"<SUB>는 어디에 캠퍼스가 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<SUB>의 캠퍼스는 <OBJ>에 있어요."
+			]
+		}
+	},
+	"College": {
+		"sisterCollege": {
+			"Knowledge_Question": [
+				"<SUB>는 어느 대학이랑 자매관계를 갖고 있나요?"
+			],
+			"Knowledge_Inform": [
+				"<OBJ>는 <SUB>의 자매학교입니다."
+			]
+		}
+	},
+	"City": {},
+	"Town": {}
+}

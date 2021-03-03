@@ -1,0 +1,237 @@
+http://dbpedia.org/ontology/acquirementDate	취득일
+http://dbpedia.org/ontology/activeYearsEndDate	유효 연도 종료일
+http://dbpedia.org/ontology/activeYearsEndYear	활동 연도
+http://dbpedia.org/ontology/activeYearsStartDate	유효 연도 시작 날짜
+http://dbpedia.org/ontology/activeYearsStartYear	시작 연도
+http://dbpedia.org/ontology/added	
+http://dbpedia.org/ontology/agencyStationCode	에이전시 스테이션 코드
+http://dbpedia.org/ontology/alias	별칭
+http://dbpedia.org/ontology/anniversary	기념일
+http://dbpedia.org/ontology/appearancesInLeague	리그 출전은 0
+http://dbpedia.org/ontology/appearancesInNationalTeam	
+http://dbpedia.org/ontology/area	영역
+http://dbpedia.org/ontology/areaCode	지역 번호
+http://dbpedia.org/ontology/areaTotal	총 면적
+http://dbpedia.org/ontology/assets	자산
+http://dbpedia.org/ontology/bSide	b면
+http://dbpedia.org/ontology/beatifiedDate	승리 날짜
+http://dbpedia.org/ontology/birthDate	생년월일
+http://dbpedia.org/ontology/birthYear	탄생 년도
+http://dbpedia.org/ontology/boilingPoint	비점
+http://dbpedia.org/ontology/budget	예산
+http://dbpedia.org/ontology/buildingEndDate	건물 종료일
+http://dbpedia.org/ontology/buildingEndYear	건물 끝 연도
+http://dbpedia.org/ontology/buildingStartDate	건축 시작일
+http://dbpedia.org/ontology/buildingStartYear	건축 시작 연도
+http://dbpedia.org/ontology/canonizedDate	정식 날짜
+http://dbpedia.org/ontology/capacity	용량
+http://dbpedia.org/ontology/captureDate	캡처 날짜
+http://dbpedia.org/ontology/careerPrizeMoney	커리어 상금
+http://dbpedia.org/ontology/causalties	원인
+http://dbpedia.org/ontology/censusYear	인구 조사 년도
+http://dbpedia.org/ontology/christeningDate	세례 날짜
+http://dbpedia.org/ontology/circulation	순환
+http://dbpedia.org/ontology/closed	휴교
+http://dbpedia.org/ontology/closingDate	마감일
+http://dbpedia.org/ontology/closingYear	마지막 해
+http://dbpedia.org/ontology/cmykCoordinateBlack	cmyk 좌표 검정
+http://dbpedia.org/ontology/cmykCoordinateCyanic	cmyk 좌표 시안
+http://dbpedia.org/ontology/cmykCoordinateMagenta	cmyk 좌표 자홍색
+http://dbpedia.org/ontology/cmykCoordinateYellow	cmyk 좌표 황색
+http://dbpedia.org/ontology/colourHexCode	색상 16 진 코드
+http://dbpedia.org/ontology/combatant	전투원
+http://dbpedia.org/ontology/commissioningDate	시운전 날짜
+http://dbpedia.org/ontology/completionDate	완료일
+http://dbpedia.org/ontology/contractAward	계약 상
+http://dbpedia.org/ontology/cost	비용
+http://dbpedia.org/ontology/crews	승무원
+http://dbpedia.org/ontology/currentSeason	현재 시즌
+http://dbpedia.org/ontology/date	날짜
+http://dbpedia.org/ontology/dateCompleted	
+http://dbpedia.org/ontology/dateConstruction	날짜 건설
+http://dbpedia.org/ontology/dateOfAbandonment	
+http://dbpedia.org/ontology/dateOfBurial	매장 날짜
+http://dbpedia.org/ontology/dateUse	날짜 사용
+http://dbpedia.org/ontology/day	날
+http://dbpedia.org/ontology/deathDate	사망일
+http://dbpedia.org/ontology/deathYear	죽음의 해
+http://dbpedia.org/ontology/debut	데뷔
+http://dbpedia.org/ontology/decommissioningDate	폐기 날짜
+http://dbpedia.org/ontology/demolitionDate	철거 날짜
+http://dbpedia.org/ontology/demolitionYear	철거 연도
+http://dbpedia.org/ontology/demonym	모의
+http://dbpedia.org/ontology/density	밀도
+http://dbpedia.org/ontology/destructionDate	파괴 일
+http://dbpedia.org/ontology/diameter	직경
+http://dbpedia.org/ontology/disbanded	해산
+http://dbpedia.org/ontology/discovered	발견
+http://dbpedia.org/ontology/dissolutionDate	해산 일
+http://dbpedia.org/ontology/dissolutionYear	해산 연도
+http://dbpedia.org/ontology/dissolved	해산
+http://dbpedia.org/ontology/dorlandsSuffix	dorlands 접미사
+http://dbpedia.org/ontology/draftYear	초안
+http://dbpedia.org/ontology/electionDate	선거일
+http://dbpedia.org/ontology/electionDateLeader	선거일 리더
+http://dbpedia.org/ontology/elevation	고도
+http://dbpedia.org/ontology/endDate	종료일
+http://dbpedia.org/ontology/eruptionYear	분화 년도
+http://dbpedia.org/ontology/ethnicGroupsInYear	민족 그룹
+http://dbpedia.org/ontology/extinctionDate	만료일
+http://dbpedia.org/ontology/extinctionYear	멸종 년도
+http://dbpedia.org/ontology/failedLaunches	실패한 발사
+http://dbpedia.org/ontology/feastDay	축제 일
+http://dbpedia.org/ontology/fileSize	파일 크기
+http://dbpedia.org/ontology/finalFlight	마지막 비행
+http://dbpedia.org/ontology/finalPublicationYear	마지막 출판 년도
+http://dbpedia.org/ontology/firstAirDate	첫 방송 날짜
+http://dbpedia.org/ontology/firstAscentYear	첫 해
+http://dbpedia.org/ontology/firstFlightEndDate	첫 비행 종료 날짜
+http://dbpedia.org/ontology/firstFlightStartDate	첫 비행 시작 날짜
+http://dbpedia.org/ontology/firstPublicationDate	첫 발행일
+http://dbpedia.org/ontology/firstPublicationYear	첫 발행 년도
+http://dbpedia.org/ontology/floorArea	바닥 면적
+http://dbpedia.org/ontology/floorCount	층 수
+http://dbpedia.org/ontology/foalDate	새끼 날짜
+http://dbpedia.org/ontology/formationDate	결성 일
+http://dbpedia.org/ontology/formationYear	설립 년도
+http://dbpedia.org/ontology/foundingDate	설립일
+http://dbpedia.org/ontology/foundingYear	설립 년도
+http://dbpedia.org/ontology/goalsInLeague	리그 목표
+http://dbpedia.org/ontology/goalsInNationalTeam	목표
+http://dbpedia.org/ontology/grayPage	회색 페이지
+http://dbpedia.org/ontology/graySubject	회색 주제
+http://dbpedia.org/ontology/gross	총
+http://dbpedia.org/ontology/grossDomesticProduct	국내 총생산
+http://dbpedia.org/ontology/height	높이
+http://dbpedia.org/ontology/hsvCoordinateHue	hsv 좌표 색조
+http://dbpedia.org/ontology/hsvCoordinateSaturation	hsv 좌표 포화도
+http://dbpedia.org/ontology/hsvCoordinateValue	hsv 좌표 값
+http://dbpedia.org/ontology/icd9	icd9
+http://dbpedia.org/ontology/icdo	icdo
+http://dbpedia.org/ontology/id	id
+http://dbpedia.org/ontology/impactFactorAsOf	영향 요인
+http://dbpedia.org/ontology/introductionDate	도입 일
+http://dbpedia.org/ontology/isbn	isbn
+http://dbpedia.org/ontology/issDockings	iss 도킹
+http://dbpedia.org/ontology/lastAirDate	마지막 방송 날짜
+http://dbpedia.org/ontology/lastElectionDate	마지막 선거일
+http://dbpedia.org/ontology/lastFlightEndDate	마지막 비행 종료 날짜
+http://dbpedia.org/ontology/lastFlightStartDate	마지막 비행 시작 날짜
+http://dbpedia.org/ontology/lastPublicationDate	마지막 출판 일
+http://dbpedia.org/ontology/latestPreviewDate	최신 미리보기 날짜
+http://dbpedia.org/ontology/latestPreviewVersion	최신 미리보기 버전
+http://dbpedia.org/ontology/latestReleaseDate	최신 릴리스 날짜
+http://dbpedia.org/ontology/latestReleaseVersion	최신 릴리스 버전
+http://dbpedia.org/ontology/layingDown	정리
+http://dbpedia.org/ontology/leaderTitle	리더 타이틀
+http://dbpedia.org/ontology/length	길이
+http://dbpedia.org/ontology/lowerEarthOrbitPayload	하위 지구 궤도 탑재량
+http://dbpedia.org/ontology/maidenFlight	처녀 비행
+http://dbpedia.org/ontology/maidenVoyage	처녀 항해
+http://dbpedia.org/ontology/mass	질량
+http://dbpedia.org/ontology/maximumElevation	최대 고도는 1024.0
+http://dbpedia.org/ontology/meltingPoint	녹는 점
+http://dbpedia.org/ontology/membership	구성원
+http://dbpedia.org/ontology/meshId	메쉬 ID
+http://dbpedia.org/ontology/minimumElevation	최소 고도
+http://dbpedia.org/ontology/mirDockings	mir 도킹
+http://dbpedia.org/ontology/missions	임무
+http://dbpedia.org/ontology/modelEndYear	모델 종료 연도
+http://dbpedia.org/ontology/modelStartYear	모델 시작 연도
+http://dbpedia.org/ontology/mouthElevation	입 높이
+http://dbpedia.org/ontology/nationalYears	국가적인 해
+http://dbpedia.org/ontology/netIncome	순이익
+http://dbpedia.org/ontology/networth	순가
+http://dbpedia.org/ontology/number	수
+http://dbpedia.org/ontology/numberBuilt	수
+http://dbpedia.org/ontology/numberOfBronzeMedalsWon	동메달 수
+http://dbpedia.org/ontology/numberOfEmployees	직원 수
+http://dbpedia.org/ontology/numberOfGoldMedalsWon	금메달 수
+http://dbpedia.org/ontology/numberOfOrbits	궤도 수
+http://dbpedia.org/ontology/numberOfPages	페이지 수
+http://dbpedia.org/ontology/numberOfParkingSpaces	주차 공간 수
+http://dbpedia.org/ontology/numberOfParticipatingNations	
+http://dbpedia.org/ontology/numberOfPeopleAttending	수
+http://dbpedia.org/ontology/numberOfRestaurants	레스토랑 수
+http://dbpedia.org/ontology/numberOfRooms	객실 수
+http://dbpedia.org/ontology/numberOfSilverMedalsWon	은메달 수
+http://dbpedia.org/ontology/numberOfStaff	직원 수
+http://dbpedia.org/ontology/numberOfStations	스테이션 수
+http://dbpedia.org/ontology/numberOfStudents	학생 수
+http://dbpedia.org/ontology/numberOfSuites	스위트 수
+http://dbpedia.org/ontology/numberOfVisitorsAsOf	방문객 수
+http://dbpedia.org/ontology/oclc	oclc
+http://dbpedia.org/ontology/openingDate	개장일
+http://dbpedia.org/ontology/openingYear	첫 해
+http://dbpedia.org/ontology/operatingIncome	영업 수입
+http://dbpedia.org/ontology/orbits	궤도
+http://dbpedia.org/ontology/orderDate	주문일
+http://dbpedia.org/ontology/passengersPerDay	승객
+http://dbpedia.org/ontology/percentageOfAreaWater	면적 수 비율
+http://dbpedia.org/ontology/playingTime	경기 시간
+http://dbpedia.org/ontology/populationAsOf	인구
+http://dbpedia.org/ontology/populationDensity	인구 밀도
+http://dbpedia.org/ontology/populationTotal	인구 총합
+http://dbpedia.org/ontology/populationTotalRanking	인구 총 순위
+http://dbpedia.org/ontology/populationUrban	인구 도시
+http://dbpedia.org/ontology/postalCode	우편 번호
+http://dbpedia.org/ontology/powerOutput	전력 출력
+http://dbpedia.org/ontology/premiereDate	첫날
+http://dbpedia.org/ontology/premiereYear	첫 해
+http://dbpedia.org/ontology/productionEndDate	생산 종료일
+http://dbpedia.org/ontology/productionEndYear	생산 종료 연도
+http://dbpedia.org/ontology/productionStartDate	생산 시작 날짜
+http://dbpedia.org/ontology/productionStartYear	생산 시작 연도
+http://dbpedia.org/ontology/pubchem	pubchem
+http://dbpedia.org/ontology/publicationDate	출판 일
+http://dbpedia.org/ontology/rebuildingDate	재건 날짜
+http://dbpedia.org/ontology/rebuildingYear	재건축 연도
+http://dbpedia.org/ontology/recommissioningDate	재 시행 날짜
+http://dbpedia.org/ontology/recordDate	레코드 날짜
+http://dbpedia.org/ontology/releaseDate	출시일
+http://dbpedia.org/ontology/reopeningDate	재개 일
+http://dbpedia.org/ontology/reopeningYear	재개 년
+http://dbpedia.org/ontology/restoreDate	복원 날짜
+http://dbpedia.org/ontology/retired	은퇴
+http://dbpedia.org/ontology/revenue	수익
+http://dbpedia.org/ontology/rgbCoordinateBlue	RGB 좌표 청색
+http://dbpedia.org/ontology/rgbCoordinateGreen	RGB 좌표 녹색
+http://dbpedia.org/ontology/rgbCoordinateRed	RGB 좌표 빨강
+http://dbpedia.org/ontology/routeNumber	노선 번호
+http://dbpedia.org/ontology/runtime	런타임
+http://dbpedia.org/ontology/runwayDesignation	활주로 지정
+http://dbpedia.org/ontology/runwayLength	활주로 길이
+http://dbpedia.org/ontology/salary	급여
+http://dbpedia.org/ontology/satellitesDeployed	위성
+http://dbpedia.org/ontology/seasonNumber	시즌 번호
+http://dbpedia.org/ontology/seatingCapacity	좌석 수
+http://dbpedia.org/ontology/serviceEndYear	서비스 종료 연도
+http://dbpedia.org/ontology/serviceStartYear	서비스 시작 연도
+http://dbpedia.org/ontology/shipLaunch	선박 발사
+http://dbpedia.org/ontology/shoreLength	해안 길이
+http://dbpedia.org/ontology/speedLimit	제한 속도
+http://dbpedia.org/ontology/staff	교직원
+http://dbpedia.org/ontology/startDate	시작일
+http://dbpedia.org/ontology/strength	강점
+http://dbpedia.org/ontology/successfulLaunches	성공적인 출시
+http://dbpedia.org/ontology/synonym	동의어
+http://dbpedia.org/ontology/teamSize	팀 규모
+http://dbpedia.org/ontology/timeInSpace	우주 시간
+http://dbpedia.org/ontology/title	제목
+http://dbpedia.org/ontology/toll	통행료
+http://dbpedia.org/ontology/totalLaunches	총 발사
+http://dbpedia.org/ontology/totalMass	총 질량
+http://dbpedia.org/ontology/totalPopulation	총 인구
+http://dbpedia.org/ontology/trackNumber	​​트랙 번호
+http://dbpedia.org/ontology/undraftedYear	미완성 된 해
+http://dbpedia.org/ontology/unitCost	단가
+http://dbpedia.org/ontology/vehiclesPerDay	일일 차량
+http://dbpedia.org/ontology/visitorStatisticsAsOf	
+http://dbpedia.org/ontology/volume	양
+http://dbpedia.org/ontology/weight	무게
+http://dbpedia.org/ontology/width	너비
+http://dbpedia.org/ontology/year	해
+http://dbpedia.org/ontology/yearOfConstruction	해
+http://dbpedia.org/ontology/yearOfElectrification	전기가 통하는 해
+http://dbpedia.org/ontology/youthYears	청소년 시절
+http://xmlns.com/foaf/0.1/name	이름

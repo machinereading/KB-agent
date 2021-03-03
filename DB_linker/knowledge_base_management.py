@@ -3,19 +3,26 @@ import urllib3
 import os
 import requests
 import json
+import constant
 
-TARGET_DB = "userDB"
-headers = {
-    'Content-Type': 'application/x-www-form-urlencoded, application/sparql-query, text/turtle',
-    'Accept': 'text/turtle, application/rdf+xml, application/n-triples, application/trig, application/n-quads, '
-              'text/n3, application/trix, application/ld+json, '  # application/sparql-results+xml, '
-              'application/sparql-results+json, application/x-binary-rdf-results-table, text/boolean, text/csv, '
-              'text/tsv, text/tab-separated-values '
-}
+TARGET_DB = constant.TARGET_DB
+headers = constant.headers
 
 
-def QueryToUserKB(query: str):
+
+def set_query_for_user_graph(query, user_name):
+
+    result_query = query[:query.find('{')] +'{' + 'graph <http://kbox.kaist.ac.kr/username/{}>'.format(user_name) +query[query.find('{'):] + '}'
+
+    return result_query
+
+
+def QueryToUserKB(query: str, user_name=None):
     server = "http://kbox.kaist.ac.kr:5820/%s/" % TARGET_DB
+
+    if user_name is not None:
+        query = set_query_for_user_graph(query, user_name)
+
     values = urlencode({"query": query})
     # http = urllib3.PoolManager()
     url = server + 'query?' + values
@@ -57,3 +64,21 @@ def InsertKnowledgeToUserKB(user_name: str, triple):
     # os.remove(fname)
     return True
 
+
+def InsertKnowledgeToUserKBTTL(user_name: str, triple):
+    def converter(s, p, o):
+        return "\t".join(
+            [s, p, o, "."])
+
+    fname = user_name + ".ttl"
+    f = open(fname, "a+", encoding="utf-8")
+    print(triple)
+    for line in map(lambda x: converter(*x), triple):
+        f.write(line + "\n")
+    f.close()
+    code = os.system("docker cp %s stardog_:/root/flagship/%s/%s" % (fname, user_name, fname))
+    code |= os.system(
+        """docker exec stardog_ /root/stardog/bin/stardog vcs commit --add /root/flagship/%s/%s -m 'user %s commited %s' -g "http://kbox.kaist.ac.kr/username/%s" %s""" % (
+            user_name, fname, user_name, fname, user_name, TARGET_DB))
+    # os.remove(fname)
+    return True

@@ -1,0 +1,497 @@
+http://dbpedia.org/ontology/academicAdvisor	학술 고문
+http://dbpedia.org/ontology/administrativeDistrict	행정 구역
+http://dbpedia.org/ontology/affiliation	소속 기관
+http://dbpedia.org/ontology/agency	대행사
+http://dbpedia.org/ontology/aircraftAttack	항공기 공격
+http://dbpedia.org/ontology/aircraftBomber	항공기 폭격기
+http://dbpedia.org/ontology/aircraftElectronic	전자 항공기
+http://dbpedia.org/ontology/aircraftFighter	항공기 전투기
+http://dbpedia.org/ontology/aircraftHelicopter	항공기 헬리콥터
+http://dbpedia.org/ontology/aircraftHelicopterAttack	항공기 헬리콥터 공격
+http://dbpedia.org/ontology/aircraftHelicopterMultirole	항공기 헬리콥터 멀티 롤
+http://dbpedia.org/ontology/aircraftHelicopterTransport	항공기 헬리콥터 운송
+http://dbpedia.org/ontology/aircraftHelicopterUtility	항공기 헬리콥터 유틸리티
+http://dbpedia.org/ontology/aircraftInterceptor	항공기 요격기
+http://dbpedia.org/ontology/aircraftPatrol	항공기 순찰
+http://dbpedia.org/ontology/aircraftRecon	항공기 정찰기
+http://dbpedia.org/ontology/aircraftTrainer	항공기 트레이너
+http://dbpedia.org/ontology/aircraftTransport	항공기 운송
+http://dbpedia.org/ontology/album	앨범
+http://dbpedia.org/ontology/alliance	동맹
+http://dbpedia.org/ontology/almaMater	교인
+http://dbpedia.org/ontology/animal	동물
+http://dbpedia.org/ontology/animator	애니메이터
+http://dbpedia.org/ontology/anthem	국가
+http://dbpedia.org/ontology/appointer	appointer
+http://dbpedia.org/ontology/archipelago	군도
+http://dbpedia.org/ontology/architect	건축가
+http://dbpedia.org/ontology/areaOfSearch	검색 영역
+http://dbpedia.org/ontology/arrondissement	약어
+http://dbpedia.org/ontology/artery	동맥
+http://dbpedia.org/ontology/artist	아티스트
+http://dbpedia.org/ontology/assembly	어셈블리
+http://dbpedia.org/ontology/associate	준회원
+http://dbpedia.org/ontology/associatedAct	관련 행위
+http://dbpedia.org/ontology/associatedBand	관련 밴드
+http://dbpedia.org/ontology/associatedMusicalArtist	관련 음악가
+http://dbpedia.org/ontology/associationOfLocalGovernment	지방 정부 협회
+http://dbpedia.org/ontology/athletics	육상
+http://dbpedia.org/ontology/author	저자
+http://dbpedia.org/ontology/automobilePlatform	자동차 플랫폼
+http://dbpedia.org/ontology/award	상
+http://dbpedia.org/ontology/bandMember	밴드 멤버
+http://dbpedia.org/ontology/basedOn	
+http://dbpedia.org/ontology/battle	전투
+http://dbpedia.org/ontology/beatifiedBy	패배
+http://dbpedia.org/ontology/beatifiedPlace	구타 장소
+http://dbpedia.org/ontology/billed	
+http://dbpedia.org/ontology/binomial	이항
+http://dbpedia.org/ontology/binomialAuthority	이항 적 권위
+http://dbpedia.org/ontology/birthPlace	출생지
+http://dbpedia.org/ontology/board	이사회
+http://dbpedia.org/ontology/bodyDiscovered	
+http://dbpedia.org/ontology/bodyStyle	차체 스타일
+http://dbpedia.org/ontology/border	경계
+http://dbpedia.org/ontology/borough	자치구
+http://dbpedia.org/ontology/branchFrom	가지
+http://dbpedia.org/ontology/brand	브랜드
+http://dbpedia.org/ontology/broadcastArea	브로드 캐스트 영역
+http://dbpedia.org/ontology/broadcastNetwork	방송 네트워크
+http://dbpedia.org/ontology/bronzeMedalist	동메달리스트
+http://dbpedia.org/ontology/builder	빌더
+http://dbpedia.org/ontology/campus	캠퍼스
+http://dbpedia.org/ontology/canonizedBy	정식
+http://dbpedia.org/ontology/canonizedPlace	정식 장소
+http://dbpedia.org/ontology/canton	주
+http://dbpedia.org/ontology/capital	수도
+http://dbpedia.org/ontology/capitalCountry	수도
+http://dbpedia.org/ontology/capitalRegion	수도 지역
+http://dbpedia.org/ontology/category	범주
+http://dbpedia.org/ontology/ceremonialCounty	식민지 카운티
+http://dbpedia.org/ontology/chain	체인
+http://dbpedia.org/ontology/chairman	회장
+http://dbpedia.org/ontology/chairperson	의장
+http://dbpedia.org/ontology/champion	챔피언
+http://dbpedia.org/ontology/championInDoubleFemale	더블 여자 챔피언
+http://dbpedia.org/ontology/championInDoubleMale	더블 남자 챔피언
+http://dbpedia.org/ontology/championInMixedDouble	혼합 복식 챔피언
+http://dbpedia.org/ontology/championInSingleFemale	싱글 여성 챔피언
+http://dbpedia.org/ontology/championInSingleMale	싱글 남자 챔피언
+http://dbpedia.org/ontology/chancellor	총리
+http://dbpedia.org/ontology/channel	채널
+http://dbpedia.org/ontology/chiefEditor	편집장
+http://dbpedia.org/ontology/child	자식
+http://dbpedia.org/ontology/childOrganisation	하위 조직
+http://dbpedia.org/ontology/choreographer	안무가
+http://dbpedia.org/ontology/cinematography	촬영
+http://dbpedia.org/ontology/citizenship	시민권
+http://dbpedia.org/ontology/city	도시
+http://dbpedia.org/ontology/class	클래스
+http://dbpedia.org/ontology/closingFilm	결말 영화
+http://dbpedia.org/ontology/club	클럽
+http://dbpedia.org/ontology/coach	코치
+http://dbpedia.org/ontology/college	대학
+http://dbpedia.org/ontology/colour	색
+http://dbpedia.org/ontology/commandStructure	명령 구조
+http://dbpedia.org/ontology/commander	사령관
+http://dbpedia.org/ontology/company	회사
+http://dbpedia.org/ontology/comparable	
+http://dbpedia.org/ontology/compiler	컴파일러
+http://dbpedia.org/ontology/component	구성 요소
+http://dbpedia.org/ontology/composer	작곡가
+http://dbpedia.org/ontology/computingInput	컴퓨팅 입력
+http://dbpedia.org/ontology/computingMedia	컴퓨팅 미디어
+http://dbpedia.org/ontology/computingPlatform	컴퓨팅 플랫폼
+http://dbpedia.org/ontology/contractor	계약자
+http://dbpedia.org/ontology/councilArea	협의회 지역
+http://dbpedia.org/ontology/country	국가
+http://dbpedia.org/ontology/countryOrigin	국가 기원
+http://dbpedia.org/ontology/county	카운티
+http://dbpedia.org/ontology/countySeat	카운티 좌석
+http://dbpedia.org/ontology/coverArtist	표지 아티스트
+http://dbpedia.org/ontology/cpu	CPU
+http://dbpedia.org/ontology/creativeDirector	크리에이티브 디렉터
+http://dbpedia.org/ontology/creator	제작자
+http://dbpedia.org/ontology/creatorOfDish	요리를 만든 사람
+http://dbpedia.org/ontology/crosses	십자가
+http://dbpedia.org/ontology/cultivatedVariety	
+http://dbpedia.org/ontology/curator	큐레이터
+http://dbpedia.org/ontology/currency	통화
+http://dbpedia.org/ontology/currentMember	멤버
+http://dbpedia.org/ontology/currentPartner	현재 파트너
+http://dbpedia.org/ontology/currentProduction	현재 작품
+http://dbpedia.org/ontology/daylightSavingTimeZone	일광 절약 시간대
+http://dbpedia.org/ontology/deathCause	사망 원인
+http://dbpedia.org/ontology/deathPlace	사망 장소
+http://dbpedia.org/ontology/debutTeam	데뷔 팀
+http://dbpedia.org/ontology/department	부서
+http://dbpedia.org/ontology/deputy	대리인
+http://dbpedia.org/ontology/derivative	파생물
+http://dbpedia.org/ontology/designCompany	디자인 회사
+http://dbpedia.org/ontology/designer	디자이너
+http://dbpedia.org/ontology/destination	목적지
+http://dbpedia.org/ontology/developer	개발자
+http://dbpedia.org/ontology/director	감독
+http://dbpedia.org/ontology/discoverer	발견 자
+http://dbpedia.org/ontology/distributingCompany	배포 회사
+http://dbpedia.org/ontology/distributingLabel	배포 레이블
+http://dbpedia.org/ontology/distributor	총판
+http://dbpedia.org/ontology/district	지구
+http://dbpedia.org/ontology/division	구분
+http://dbpedia.org/ontology/doctoralAdvisor	박사 고문
+http://dbpedia.org/ontology/doctoralStudent	박사 과정 학생
+http://dbpedia.org/ontology/domain	도메인
+http://dbpedia.org/ontology/draftTeam	초안 팀
+http://dbpedia.org/ontology/drainsFrom	배수구
+http://dbpedia.org/ontology/editing	편집
+http://dbpedia.org/ontology/editor	편집자
+http://dbpedia.org/ontology/education	교육
+http://dbpedia.org/ontology/employer	고용주
+http://dbpedia.org/ontology/endPoint	종점
+http://dbpedia.org/ontology/endingTheme	끝 테마
+http://dbpedia.org/ontology/engine	엔진
+http://dbpedia.org/ontology/engineer	엔지니어
+http://dbpedia.org/ontology/equipment	장비
+http://dbpedia.org/ontology/ethnicGroup	민족 그룹
+http://dbpedia.org/ontology/ethnicity	민족
+http://dbpedia.org/ontology/europeanAffiliation	유럽 소속
+http://dbpedia.org/ontology/europeanParliamentGroup	유럽 의회 그룹
+http://dbpedia.org/ontology/event	이벤트
+http://dbpedia.org/ontology/executiveProducer	총괄 프로듀서
+http://dbpedia.org/ontology/family	계열
+http://dbpedia.org/ontology/fastestDriver	가장 빠른 드라이버
+http://dbpedia.org/ontology/fastestDriverCountry	가장 빠른 운전 국가
+http://dbpedia.org/ontology/fastestDriverTeam	가장 빠른 드라이버 팀
+http://dbpedia.org/ontology/federalState	연방 주
+http://dbpedia.org/ontology/field	분야
+http://dbpedia.org/ontology/firstAscentPerson	첫 번째 상승 자
+http://dbpedia.org/ontology/firstDriver	첫 번째 드라이버
+http://dbpedia.org/ontology/firstDriverCountry	첫 번째 운전 국가
+http://dbpedia.org/ontology/firstDriverTeam	첫 번째 드라이버 팀
+http://dbpedia.org/ontology/firstFlight	첫 비행
+http://dbpedia.org/ontology/firstLeader	첫 번째 지도자
+http://dbpedia.org/ontology/firstRace	첫 번째 레이스
+http://dbpedia.org/ontology/firstWin	첫 번째 승리
+http://dbpedia.org/ontology/flagBearer	깃발 소지자
+http://dbpedia.org/ontology/followingEvent	다음 이벤트
+http://dbpedia.org/ontology/format	형식
+http://dbpedia.org/ontology/formerBandMember	전 밴드 멤버
+http://dbpedia.org/ontology/formerBroadcastNetwork	이전 방송 네트워크
+http://dbpedia.org/ontology/formerChoreographer	전 안무가
+http://dbpedia.org/ontology/formerCoach	전 코치
+http://dbpedia.org/ontology/formerPartner	전 파트너
+http://dbpedia.org/ontology/formerTeam	전 팀
+http://dbpedia.org/ontology/foundationPlace	기초 장소
+http://dbpedia.org/ontology/foundedBy	창립자
+http://dbpedia.org/ontology/founder	설립자
+http://dbpedia.org/ontology/fourthCommander	네 번째 사령관
+http://dbpedia.org/ontology/frazioni	frazioni
+http://dbpedia.org/ontology/gameArtist	게임 아티스트
+http://dbpedia.org/ontology/gameEngine	게임 엔진
+http://dbpedia.org/ontology/garrison	수비대
+http://dbpedia.org/ontology/genre	장르
+http://dbpedia.org/ontology/genus	속
+http://dbpedia.org/ontology/goldMedalist	금메달리스트
+http://dbpedia.org/ontology/governingBody	관리 기관
+http://dbpedia.org/ontology/governmentCountry	정부 국가
+http://dbpedia.org/ontology/governmentMountain	정부 산
+http://dbpedia.org/ontology/governmentPlace	정부 장소
+http://dbpedia.org/ontology/governmentType	정부 유형
+http://dbpedia.org/ontology/governor	총재
+http://dbpedia.org/ontology/governorGeneral	
+http://dbpedia.org/ontology/ground	근거
+http://dbpedia.org/ontology/growingGrape	포도 재배
+http://dbpedia.org/ontology/guest	손님
+http://dbpedia.org/ontology/hasJunctionWith	교차점
+http://dbpedia.org/ontology/hasVariant	변형
+http://dbpedia.org/ontology/head	책임자
+http://dbpedia.org/ontology/headquarter	본부
+http://dbpedia.org/ontology/highestMountain	가장 높은 산
+http://dbpedia.org/ontology/highestPlace	가장 높은 장소
+http://dbpedia.org/ontology/highestRegion	가장 높은 지역
+http://dbpedia.org/ontology/highestState	가장 높은 주
+http://dbpedia.org/ontology/highschool	고등학교
+http://dbpedia.org/ontology/homeArena	홈 경기장
+http://dbpedia.org/ontology/homeStadium	홈 스타디움
+http://dbpedia.org/ontology/homeport	고향
+http://dbpedia.org/ontology/hometown	고향
+http://dbpedia.org/ontology/honours	영광
+http://dbpedia.org/ontology/house	집
+http://dbpedia.org/ontology/hubAirport	허브 공항
+http://dbpedia.org/ontology/hybrid	하이브리드
+http://dbpedia.org/ontology/ideology	이데올로기
+http://dbpedia.org/ontology/illustrator	일러스트 레이터
+http://dbpedia.org/ontology/incumbent	현직
+http://dbpedia.org/ontology/industry	산업
+http://dbpedia.org/ontology/inflow	유입
+http://dbpedia.org/ontology/influenced	
+http://dbpedia.org/ontology/influencedBy	
+http://dbpedia.org/ontology/ingredient	성분
+http://dbpedia.org/ontology/innervates	신경 분포
+http://dbpedia.org/ontology/institution	기관
+http://dbpedia.org/ontology/instrument	악기
+http://dbpedia.org/ontology/intercommunality	상호 커뮤니티
+http://dbpedia.org/ontology/internationalAffiliation	국제 소속
+http://dbpedia.org/ontology/isPartOf	일부
+http://dbpedia.org/ontology/isPartOfAnatomicalStructure	해부학 적 구조의 일부
+http://dbpedia.org/ontology/isPartOfMilitaryConflict	군사 분쟁의 일부
+http://dbpedia.org/ontology/island	섬
+http://dbpedia.org/ontology/jurisdiction	관할권
+http://dbpedia.org/ontology/keyPerson	핵심 인물
+http://dbpedia.org/ontology/kingdom	왕국
+http://dbpedia.org/ontology/knownFor	
+http://dbpedia.org/ontology/language	언어
+http://dbpedia.org/ontology/languageFamily	언어 제품군
+http://dbpedia.org/ontology/languageRegulator	언어 조절기
+http://dbpedia.org/ontology/largestCity	가장 큰 도시
+http://dbpedia.org/ontology/largestSettlement	가장 큰 합의
+http://dbpedia.org/ontology/lastAppearance	마지막 모습
+http://dbpedia.org/ontology/lastFlight	마지막 비행
+http://dbpedia.org/ontology/lastRace	마지막 레이스
+http://dbpedia.org/ontology/lastWin	마지막 승리
+http://dbpedia.org/ontology/launchPad	발사대
+http://dbpedia.org/ontology/launchSite	발사 장소
+http://dbpedia.org/ontology/leader	지도자
+http://dbpedia.org/ontology/leaderName	리더 이름
+http://dbpedia.org/ontology/leaderParty	지도자 정당
+http://dbpedia.org/ontology/league	리그
+http://dbpedia.org/ontology/leftTributary	왼쪽 지류
+http://dbpedia.org/ontology/license	라이센스
+http://dbpedia.org/ontology/lieutenancyArea	수련 지역
+http://dbpedia.org/ontology/lieutenant	
+http://dbpedia.org/ontology/literaryGenre	문학 장르
+http://dbpedia.org/ontology/localAuthority	지역 기관
+http://dbpedia.org/ontology/locatedInArea	
+http://dbpedia.org/ontology/location	위치
+http://dbpedia.org/ontology/locationCity	위치 도시
+http://dbpedia.org/ontology/locationCountry	위치 국가
+http://dbpedia.org/ontology/lounge	라운지
+http://dbpedia.org/ontology/lowestMountain	가장 낮은 산
+http://dbpedia.org/ontology/lowestPlace	가장 낮은 곳
+http://dbpedia.org/ontology/lyrics	가사
+http://dbpedia.org/ontology/magazine	잡지
+http://dbpedia.org/ontology/mainInterest	주요 관심사
+http://dbpedia.org/ontology/mainOrgan	주요 기관
+http://dbpedia.org/ontology/maintainedBy	
+http://dbpedia.org/ontology/majorIsland	주요 섬
+http://dbpedia.org/ontology/majorShrine	주요 신사
+http://dbpedia.org/ontology/management	관리
+http://dbpedia.org/ontology/manager	관리자
+http://dbpedia.org/ontology/managerClub	매니저 클럽
+http://dbpedia.org/ontology/manufacturer	제조업체
+http://dbpedia.org/ontology/map	
+http://dbpedia.org/ontology/march	행진
+http://dbpedia.org/ontology/mayor	시장
+http://dbpedia.org/ontology/mediaType	미디어 유형
+http://dbpedia.org/ontology/meetingRoad	회의 도로
+http://dbpedia.org/ontology/mergedIntoParty	
+http://dbpedia.org/ontology/metropolitanBorough	수도권 자치구
+http://dbpedia.org/ontology/militaryBranch	군사 지부
+http://dbpedia.org/ontology/militaryRank	군대 순위
+http://dbpedia.org/ontology/militaryUnit	군사 단위
+http://dbpedia.org/ontology/mission	임무
+http://dbpedia.org/ontology/monarch	군주
+http://dbpedia.org/ontology/mountainRange	산맥
+http://dbpedia.org/ontology/mouthCountry	입 국가
+http://dbpedia.org/ontology/mouthMountain	입 산
+http://dbpedia.org/ontology/mouthPlace	입가
+http://dbpedia.org/ontology/mouthRegion	입 지역
+http://dbpedia.org/ontology/movement	운동
+http://dbpedia.org/ontology/municipality	시정촌
+http://dbpedia.org/ontology/museum	박물관
+http://dbpedia.org/ontology/musicBy	음악
+http://dbpedia.org/ontology/musicComposer	음악 작곡가
+http://dbpedia.org/ontology/musicFusionGenre	음악 퓨전 장르
+http://dbpedia.org/ontology/musicSubgenre	음악 하위 장르
+http://dbpedia.org/ontology/musicalArtist	뮤지컬 아티스트
+http://dbpedia.org/ontology/musicalBand	음악 밴드
+http://dbpedia.org/ontology/musicians	음악가
+http://dbpedia.org/ontology/namedAfter	
+http://dbpedia.org/ontology/narrator	내레이터
+http://dbpedia.org/ontology/nationalAffiliation	국가 소속
+http://dbpedia.org/ontology/nationalTeam	국가 대표팀
+http://dbpedia.org/ontology/nationality	국적
+http://dbpedia.org/ontology/nearestCity	
+http://dbpedia.org/ontology/neighboringMunicipality	이웃 시정촌
+http://dbpedia.org/ontology/nerve	신경
+http://dbpedia.org/ontology/network	네트워크
+http://dbpedia.org/ontology/nextEvent	다음 이벤트
+http://dbpedia.org/ontology/nextMission	다음 임무
+http://dbpedia.org/ontology/nonFictionSubject	논픽션 주제
+http://dbpedia.org/ontology/notableCommander	주목할만한 사령관
+http://dbpedia.org/ontology/notableIdea	주목할만한 아이디어
+http://dbpedia.org/ontology/notableStudent	주목할만한 학생
+http://dbpedia.org/ontology/notableWork	주목할만한 작품
+http://dbpedia.org/ontology/occupation	직업
+http://dbpedia.org/ontology/officerInCharge	책임자
+http://dbpedia.org/ontology/officialLanguage	공식 언어
+http://dbpedia.org/ontology/openingFilm	오프닝 필름
+http://dbpedia.org/ontology/openingTheme	오프닝 테마
+http://dbpedia.org/ontology/operatingSystem	운영 체제
+http://dbpedia.org/ontology/operator	운영자
+http://dbpedia.org/ontology/opponent	상대
+http://dbpedia.org/ontology/order	순서
+http://dbpedia.org/ontology/origin	원산지
+http://dbpedia.org/ontology/originalLanguage	원래 언어
+http://dbpedia.org/ontology/otherParty	다른 당사자
+http://dbpedia.org/ontology/outflow	유출
+http://dbpedia.org/ontology/owner	소유자
+http://dbpedia.org/ontology/owningCompany	소유 회사
+http://dbpedia.org/ontology/owningOrganisation	소유 조직
+http://dbpedia.org/ontology/parent	부모
+http://dbpedia.org/ontology/parentCompany	모회사
+http://dbpedia.org/ontology/parentMountainPeak	부모 산봉우리
+http://dbpedia.org/ontology/parentOrganisation	상위 조직
+http://dbpedia.org/ontology/part	일부
+http://dbpedia.org/ontology/partner	파트너
+http://dbpedia.org/ontology/party	당사자
+http://dbpedia.org/ontology/pastMember	과거 멤버
+http://dbpedia.org/ontology/patron	후원자
+http://dbpedia.org/ontology/person	사람
+http://dbpedia.org/ontology/philosophicalSchool	철학적 학교
+http://dbpedia.org/ontology/phylum	계통
+http://dbpedia.org/ontology/picture	사진
+http://dbpedia.org/ontology/pictureFormat	사진 형식
+http://dbpedia.org/ontology/place	장소
+http://dbpedia.org/ontology/placeOfBurial	매장 장소
+http://dbpedia.org/ontology/plant	플랜트
+http://dbpedia.org/ontology/poleDriver	폴 드라이버
+http://dbpedia.org/ontology/poleDriverCountry	극 드라이버 국가
+http://dbpedia.org/ontology/poleDriverTeam	폴 드라이버 팀
+http://dbpedia.org/ontology/politicalPartyInLegislature	입법부의 정당
+http://dbpedia.org/ontology/politicalPartyOfLeader	지도자의 정당
+http://dbpedia.org/ontology/portrayer	묘사 자
+http://dbpedia.org/ontology/position	포지션
+http://dbpedia.org/ontology/powerType	전원 유형
+http://dbpedia.org/ontology/precursor	선구자
+http://dbpedia.org/ontology/predecessor	전신
+http://dbpedia.org/ontology/premierePlace	프리미어 장소
+http://dbpedia.org/ontology/presenter	발표자
+http://dbpedia.org/ontology/president	
+http://dbpedia.org/ontology/previousEditor	이전 편집자
+http://dbpedia.org/ontology/previousEvent	이전 이벤트
+http://dbpedia.org/ontology/previousMission	이전 임무
+http://dbpedia.org/ontology/previousWork	이전 작품
+http://dbpedia.org/ontology/primeMinister	총리
+http://dbpedia.org/ontology/principalArea	주요 영역
+http://dbpedia.org/ontology/principalEngineer	주요 엔지니어
+http://dbpedia.org/ontology/producer	프로듀서
+http://dbpedia.org/ontology/product	제품
+http://dbpedia.org/ontology/profession	직업
+http://dbpedia.org/ontology/programmeFormat	프로그램 형식
+http://dbpedia.org/ontology/programmingLanguage	프로그래밍 언어
+http://dbpedia.org/ontology/promotion	홍보
+http://dbpedia.org/ontology/province	주
+http://dbpedia.org/ontology/provost	주임
+http://dbpedia.org/ontology/publisher	게시자
+http://dbpedia.org/ontology/race	인종
+http://dbpedia.org/ontology/railwayLineUsingTunnel	터널을 사용하는 철도 노선
+http://dbpedia.org/ontology/railwayRollingStock	철도 차량
+http://dbpedia.org/ontology/rebuilder	재건축 자
+http://dbpedia.org/ontology/recordLabel	레코드 레이블
+http://dbpedia.org/ontology/recordedIn	
+http://dbpedia.org/ontology/rector	총재
+http://dbpedia.org/ontology/region	지역
+http://dbpedia.org/ontology/regionServed	
+http://dbpedia.org/ontology/regionalLanguage	지역 언어
+http://dbpedia.org/ontology/related	관련 제품
+http://dbpedia.org/ontology/relatedMeanOfTransportation	관련 운송 수단
+http://dbpedia.org/ontology/relation	관계
+http://dbpedia.org/ontology/relative	친척
+http://dbpedia.org/ontology/releaseLocation	출시 위치
+http://dbpedia.org/ontology/religion	종교
+http://dbpedia.org/ontology/residence	거주지
+http://dbpedia.org/ontology/restingPlace	휴식 장소
+http://dbpedia.org/ontology/rightTributary	오른쪽 지류
+http://dbpedia.org/ontology/rival	라이벌
+http://dbpedia.org/ontology/river	강
+http://dbpedia.org/ontology/riverBranchOf	강 가지
+http://dbpedia.org/ontology/riverMouth	강 입구
+http://dbpedia.org/ontology/rocketFunction	로켓 기능
+http://dbpedia.org/ontology/routeEnd	경로 끝
+http://dbpedia.org/ontology/routeEndLocation	경로 끝 위치
+http://dbpedia.org/ontology/routeJunction	경로 교차점
+http://dbpedia.org/ontology/routeStart	노선 시작
+http://dbpedia.org/ontology/routeStartLocation	경로 시작 위치
+http://dbpedia.org/ontology/saint	성자
+http://dbpedia.org/ontology/season	시즌
+http://dbpedia.org/ontology/secondCommander	두 번째 사령관
+http://dbpedia.org/ontology/secondDriver	두 번째 드라이버
+http://dbpedia.org/ontology/secondLeader	두 번째 지도자
+http://dbpedia.org/ontology/secondTeam	두 번째 팀
+http://dbpedia.org/ontology/secretaryGeneral	사무 총장
+http://dbpedia.org/ontology/selection	선택
+http://dbpedia.org/ontology/series	시리즈
+http://dbpedia.org/ontology/service	서비스
+http://dbpedia.org/ontology/servingRailwayLine	운행 철도 노선
+http://dbpedia.org/ontology/showJudge	쇼 판사
+http://dbpedia.org/ontology/significantBuilding	중요한 건물
+http://dbpedia.org/ontology/significantDesign	중요한 디자인
+http://dbpedia.org/ontology/significantProject	중요한 프로젝트
+http://dbpedia.org/ontology/silverMedalist	은메달리스트
+http://dbpedia.org/ontology/sisterCollege	자매 대학
+http://dbpedia.org/ontology/sisterNewspaper	자매 신문
+http://dbpedia.org/ontology/sisterStation	자매 스테이션
+http://dbpedia.org/ontology/source	원천
+http://dbpedia.org/ontology/sourceConfluence	합류점
+http://dbpedia.org/ontology/sourceConfluenceCountry	소스 합류 국가
+http://dbpedia.org/ontology/sourceConfluenceMountain	소스 합류 산
+http://dbpedia.org/ontology/sourceConfluencePlace	합류 지
+http://dbpedia.org/ontology/sourceConfluenceRegion	소스 합류 지역
+http://dbpedia.org/ontology/sourceConfluenceState	소스 합류 상태
+http://dbpedia.org/ontology/sourceCountry	원천 국가
+http://dbpedia.org/ontology/sourceMountain	원산
+http://dbpedia.org/ontology/sourcePlace	원천
+http://dbpedia.org/ontology/sourceRegion	근원지
+http://dbpedia.org/ontology/spacecraft	우주선
+http://dbpedia.org/ontology/species	종
+http://dbpedia.org/ontology/splitFromParty	정당과 분리 된 것
+http://dbpedia.org/ontology/spokenIn	
+http://dbpedia.org/ontology/sport	스포츠
+http://dbpedia.org/ontology/sportCountry	스포츠 국가
+http://dbpedia.org/ontology/sportGoverningBody	스포츠 관리 기관
+http://dbpedia.org/ontology/spouse	배우자
+http://dbpedia.org/ontology/stadium	경기장
+http://dbpedia.org/ontology/starring	주연
+http://dbpedia.org/ontology/startPoint	시작점
+http://dbpedia.org/ontology/state	상태
+http://dbpedia.org/ontology/stateOfOrigin	원산지
+http://dbpedia.org/ontology/stylisticOrigin	문체 기원
+http://dbpedia.org/ontology/subsequentWork	후속 작품
+http://dbpedia.org/ontology/subsidiary	자회사
+http://dbpedia.org/ontology/successor	후계자
+http://dbpedia.org/ontology/summerAppearances	여름 출연
+http://dbpedia.org/ontology/taoiseach	taoiseach
+http://dbpedia.org/ontology/targetAirport	대상 공항
+http://dbpedia.org/ontology/team	팀
+http://dbpedia.org/ontology/televisionSeries	텔레비전 시리즈
+http://dbpedia.org/ontology/tenant	임차인
+http://dbpedia.org/ontology/territory	영토
+http://dbpedia.org/ontology/thirdCommander	세 번째 사령관
+http://dbpedia.org/ontology/thirdDriver	세 번째 드라이버
+http://dbpedia.org/ontology/thirdDriverCountry	세 번째 운 전국
+http://dbpedia.org/ontology/thirdTeam	세 번째 팀
+http://dbpedia.org/ontology/timeZone	시간대
+http://dbpedia.org/ontology/trainer	트레이너
+http://dbpedia.org/ontology/training	교육
+http://dbpedia.org/ontology/translator	번역자
+http://dbpedia.org/ontology/twinCountry	쌍둥이 국가
+http://dbpedia.org/ontology/twinTown	쌍둥이 도시
+http://dbpedia.org/ontology/type	유형
+http://dbpedia.org/ontology/typeOfElectrification	전화 종류
+http://dbpedia.org/ontology/unitaryAuthority	단일 권한
+http://dbpedia.org/ontology/university	대학교
+http://dbpedia.org/ontology/usedInWar	
+http://dbpedia.org/ontology/varietals	품종
+http://dbpedia.org/ontology/vein	정맥
+http://dbpedia.org/ontology/veneratedIn	
+http://dbpedia.org/ontology/viceChancellor	부총리
+http://dbpedia.org/ontology/vicePresident	부사장
+http://dbpedia.org/ontology/vicePrimeMinister	부총리
+http://dbpedia.org/ontology/victim	피해자
+http://dbpedia.org/ontology/voice	목소리
+http://dbpedia.org/ontology/wineRegion	와인 지역
+http://dbpedia.org/ontology/winterAppearances	겨울 모습
+http://dbpedia.org/ontology/writer	작가
+http://dbpedia.org/ontology/youthClub	청소년 클럽
+http://dbpedia.org/ontology/youthWing	청소년 날개

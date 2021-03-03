@@ -4,12 +4,12 @@ from urllib.parse import urlencode
 import urllib3
 
 main_server = 'http://kbox.kaist.ac.kr:5820/myDB/'
-entity_summaryURL = 'http://133.186.162.38:5000/summary'
+entity_summaryURL = 'http://kbox.kaist.ac.kr:5000/summary'
 
 
 def select(entity):
 	server = main_server
-
+	entity = entity.replace(' ', '_')
 	query = """select distinct (<http://kbox.kaist.ac.kr/resource/""" + entity + """> as ?s) ?p ?o ?kb
     where {
       {  <http://kbox.kaist.ac.kr/resource/""" + entity + """> ?p ?o.  }
@@ -49,6 +49,10 @@ def select(entity):
 		s = item['s']['value']
 		p = item['p']['value']
 		o = item['o']['value']
+		if 'wiki' in p or 'abstract' in p:
+			continue
+		if '//dbpedia.org' not in p:
+			continue
 		if len(item) > 3:
 			kb = item['kb']['value']
 			o = kb
@@ -121,6 +125,6 @@ def es_for_five_ten(entity):
 
 
 if __name__ == "__main__":
-	tmp_dict = find_Knowledge('싸이')
+	tmp_dict = find_Knowledge('레오나르도_다_빈치')
 	summarized_list = entity_summary(tmp_dict)
 	print(summarized_list)

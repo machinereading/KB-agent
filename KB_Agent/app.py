@@ -1,9 +1,14 @@
 from flask import Flask, request, jsonify
 import kb_agent
 import json
+from flask_cors import CORS
+import ssl
 
 app = Flask(__name__)
+CORS(app)
 
+
+context = ('future.crt', 'future.key')
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -61,4 +66,8 @@ def respond_to_user_utterance():
 
 
 if __name__ == "__main__":
-    app.run(port=8292, host='143.248.135.146')
+
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    ssl_context.load_cert_chain(certfile='cert.pem', keyfile='key.pem', password='ybjeong')
+    app.run(port=8292, host='143.248.135.146', threaded=False,
+        ssl_context=ssl_context)
